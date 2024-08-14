@@ -1,4 +1,4 @@
-# DreamGaussian
+# SGDreamer
 <h2 align="center">DreamGaussian: Crafting Hyper-Realistic Worlds from Text Descriptions via 3D Gaussian Splatting</h2>
 
 <h5 align="center">
