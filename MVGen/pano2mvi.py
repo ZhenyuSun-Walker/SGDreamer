@@ -2,6 +2,7 @@ import argparse
 import cv2
 import numpy as np
 import os
+from datetime import datetime
 
 def crop_perspective(image, fov, angle, output_size):
     h, w = image.shape[:2]
@@ -41,10 +42,10 @@ output_folder = '../generate_mvimages'
 os.makedirs(output_folder, exist_ok=True)
 
 # 输出目录
-output_dir = os.path.join(output_folder, args.output)
+output_dir = os.path.join(output_folder, f"{args.output}")
 i = 1
 while os.path.exists(output_dir):
-    output_dir = os.path.join(output_folder, f'{args.output}_{i}')
+    output_dir = os.path.join(output_folder, f'{datetime.now().strftime('--%Y%m%d-%H%M%S')}_{args.output}_{i}_fov{fov}')
     i += 1
 os.makedirs(output_dir, exist_ok=True)
 
