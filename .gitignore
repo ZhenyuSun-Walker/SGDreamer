@@ -10,3 +10,4 @@ MVSrec/mvsgs_pointcloud/
 MVSrec/mvsgs_pointcloud_opt/
 
 MVgen/outputs/
+MVgen/weights/
