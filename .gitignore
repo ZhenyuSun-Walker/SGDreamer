@@ -4,10 +4,9 @@ mvsrec/gaussian-splatting/
 **/__pycache__/
 **/*.egg-info
 *.pyc
-mvsgs_pointcloud
-record
-result
-output
-nerf_synthetic
-nerf_llff_data
-tnt_data
+MVSrec/output/
+MVSrec/result/
+MVSrec/mvsgs_pointcloud/
+MVSrec/mvsgs_pointcloud_opt/
+
+MVgen/outputs/
