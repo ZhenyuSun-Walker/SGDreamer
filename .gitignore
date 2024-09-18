@@ -1,0 +1,13 @@
+mvsrec/gaussian-splatting/
+.vscode
+.dist
+**/__pycache__/
+**/*.egg-info
+*.pyc
+mvsgs_pointcloud
+record
+result
+output
+nerf_synthetic
+nerf_llff_data
+tnt_data
