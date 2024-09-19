@@ -1,13 +1,13 @@
-mvsrec/gaussian-splatting/
 .vscode
 .dist
 **/__pycache__/
 **/*.egg-info
 *.pyc
-MVSrec/output/
-MVSrec/result/
-MVSrec/mvsgs_pointcloud/
-MVSrec/mvsgs_pointcloud_opt/
+MVSrec/dataset
+MVSrec/output
+MVSrec/result
+MVSrec/mvsgs_pointcloud
+MVSrec/mvsgs_pointcloud_opt
 
-MVgen/outputs/
-MVgen/weights/
+MVgen/outputs
+MVgen/weights
