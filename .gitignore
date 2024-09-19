@@ -1,8 +1,12 @@
+<<<<<<< HEAD
+=======
+>>>>>>> 5fc301413eb7e34df49c0831090e098e8da0280c
 .vscode
 .dist
 **/__pycache__/
 **/*.egg-info
 *.pyc
+<<<<<<< HEAD
 MVSrec/dataset
 MVSrec/output
 MVSrec/result
@@ -12,3 +16,5 @@ MVSrec/mvsgs_pointcloud_opt
 MVgen/outputs
 MVgen/weights
 Mvgen/stabilityai
+=======
+>>>>>>> 5fc301413eb7e34df49c0831090e098e8da0280c
