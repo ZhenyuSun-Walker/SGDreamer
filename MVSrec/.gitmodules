@@ -1,0 +1,8 @@
+[submodule "MASt3R"]
+	url = 
+[submodule "InstantSplat"]
+	url = 
+[submodule "MVSrec/lib/submodules/diff-gaussian-rasterization"]
+	url = 
+[submodule "MVSrec/lib/submodules/simple-knn"]
+	url = 
