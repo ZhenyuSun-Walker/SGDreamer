@@ -6,6 +6,7 @@
 **/__pycache__/
 **/*.egg-info
 *.pyc
+generate_mvimages
 <<<<<<< HEAD
 MVSrec/dataset
 MVSrec/output
