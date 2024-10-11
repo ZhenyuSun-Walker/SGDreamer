@@ -43,5 +43,5 @@ def parse_args():
 args = parse_args()
 # Example usage:
 length = len(args.target_numbers)
-output_folder_path = os.path.join(f"dataset/{datetime.now().strftime('--%Y%m%d-%H%M%S')}_{args.output}_{length}/images")
+output_folder_path = os.path.join(f"dataset/{datetime.now().strftime('%Y%m%d-%H%M%S')}_{args.output}_{length}/images")
 filter_images_by_number(args.source, args.target_numbers, output_folder_path)

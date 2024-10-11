@@ -1,6 +1,6 @@
 import torch.nn as nn
 from .utils import *
-from ...FusionNet import FeatureFusionModule
+# from ...FusionNet.MultiModal.FeatureFusionModule import FeatureFusionModule
 
 class FeatureNet(nn.Module):
     def __init__(self, norm_act=nn.BatchNorm2d):
@@ -22,7 +22,7 @@ class FeatureNet(nn.Module):
         self.smooth1 = nn.Conv2d(32, 16, 3, padding=1)
         self.smooth0 = nn.Conv2d(32, 8, 3, padding=1)
 
-        self.feature_fusion = FeatureFusionModule(global_dim=32, local_dim=8)
+        # self.feature_fusion = FeatureFusionModule(global_dim=32, local_dim=8)
 
     def _upsample_add(self, x, y):
         return F.interpolate(x, scale_factor=2, mode='bilinear', align_corners=True) + y
@@ -37,10 +37,11 @@ class FeatureNet(nn.Module):
         feat1 = self.smooth1(feat1)
         feat0 = self.smooth0(feat0)
 
-        # Use feat2 (global) and feat0 (local) in fusion
-        fused_features = self.feature_fusion(global_features=feat2, local_features=feat0)
+        # # Use feat2 (global) and feat0 (local) in fusion
+        # fused_features = self.feature_fusion(global_features=feat2, local_features=feat0)
 
-        return fused_features, feat1, feat0
+        # return fused_features, feat1, feat0
+        return feat2, feat1, feat0
 
 class CNNRender(nn.Module):
     def __init__(self, norm_act=nn.BatchNorm2d):

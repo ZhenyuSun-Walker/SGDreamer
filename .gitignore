@@ -7,15 +7,18 @@
 **/*.egg-info
 *.pyc
 generate_mvimages
+panorama
 <<<<<<< HEAD
 MVSrec/dataset
 MVSrec/output
 MVSrec/result
 MVSrec/mvsgs_pointcloud
 MVSrec/mvsgs_pointcloud_opt
+MVSrec/nerf_llff_data
 
 MVgen/outputs
 MVgen/weights
 Mvgen/stabilityai
+
 =======
 >>>>>>> 5fc301413eb7e34df49c0831090e098e8da0280c

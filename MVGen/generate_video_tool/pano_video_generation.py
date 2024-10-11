@@ -10,30 +10,24 @@ from PIL import Image
 from tqdm import tqdm
 
 
-
-def generate_video(image_paths, out_dir, FOV, deg, gen_video=True):
+def generate_video(image_paths, out_dir,  FOV, deg, gen_video=True, save_frames=True):
     pers = [cv2.imread(image_path) for image_path in image_paths]
 
-    # ee = m_P2E.Perspective(pers,
-    #                         [[90, 0, 0], [90, 45, 0], [90, 90, 0], [90, 135, 0],
-    #                          [90, 180, 0], [90, 225, 0], [90, 270, 0], [90, 315, 0]]
-    #                         )
-
-    # general version for variation 
-    pers_matrix = [[FOV, deg*i, 0] for i in range(int(360/deg))]
+    # General version for variation
+    pers_matrix = [[FOV, deg * i, 0] for i in range(int(360 / deg))]
 
     print(pers_matrix)
 
     ee = m_P2E.Perspective(pers, pers_matrix)
-    
+
     new_pano = ee.GetEquirec(2048, 4096)
     cv2.imwrite(os.path.join(out_dir, 'pano.png'), new_pano.astype(np.uint8)[540:-540])
     if not gen_video:
         return
     equ = E2P.Equirectangular(new_pano)
     fov = 90
-    video_size = (450, 600)
-    
+    video_size = (727, 1280)
+
     img = equ.GetPerspective(fov, 0, 0, video_size[0], video_size[1])  # Specify parameters(FOV, theta, phi, height, width)
 
     h = img.shape[0]
@@ -48,6 +42,10 @@ def generate_video(image_paths, out_dir, FOV, deg, gen_video=True):
 
     interval_deg = 0.5
     num_frames = int(360 / interval_deg)
+
+    image_save_path = os.path.join(out_dir, 'images')
+    os.makedirs(image_save_path, exist_ok=True)
+
     for i in range(num_frames):
         deg = i * interval_deg
         img = equ.GetPerspective(fov, deg, 0, video_size[0], video_size[1])  # Specify parameters(FOV, theta, phi, height, width)
@@ -55,22 +53,29 @@ def generate_video(image_paths, out_dir, FOV, deg, gen_video=True):
         if margin > 0:
             img = img[margin:-margin]
         img = np.clip(img, 0, 255).astype(np.uint8)
+
+        # Save each frame as an image
+        if save_frames:
+            frame_filename = os.path.join(image_save_path, f'{i:04d}.png')
+            cv2.imwrite(frame_filename, img)
+
         out.write(img)
     out.release()
    # os.system(f"ffmpeg -y -i {tmp_video_path} -vcodec libx264 {save_video_path}")
 
+
 if __name__ == '__main__':
-    data_dir='logs/tb_logs/test_mp3d_outpaint=2/version_0/images'
-    out_dir='out_paint_example'
+    data_dir = 'logs/tb_logs/test_mp3d_outpaint=2/version_0/images'
+    out_dir = 'out_paint_example'
     FOV = 36
     deg = 18
-    num = 360/deg
+    num = 360 / deg
     for scene in tqdm(os.listdir(data_dir)):
         data_path = os.path.join(data_dir, scene)
-        image_paths = [os.path.join(data_path, f'{i}.png') for i in range(num)]
-        _out_dir=os.path.join(out_dir, scene)
+        image_paths = [os.path.join(data_path, f'{i}.png') for i in range(int(num))]
+        _out_dir = os.path.join(out_dir, scene)
         os.makedirs(_out_dir, exist_ok=True)
         for i, image_path in enumerate(image_paths):
             img = cv2.imread(image_path)
             cv2.imwrite(os.path.join(_out_dir, '{}.png'.format(i)), img)
-        generate_video(image_paths, _out_dir, FOV, deg, gen_video=False)
+        generate_video(image_paths, _out_dir, FOV, deg, gen_video=True, save_frames=True)
