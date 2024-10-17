@@ -29,20 +29,17 @@ def process_all_scenes(source_dir, target_numbers, mv_images_dir):
         target_numbers (list): List of target image numbers (e.g., [0, 36, 72, ...]).
         mv_images_dir (str): Path to the generate_mvimages folder where the filtered images will be saved.
     """
-    for result_folder in os.listdir(source_dir):
-        result_path = os.path.join(source_dir, result_folder)
-        if os.path.isdir(result_path):
-            # Iterate over each scene in the results--<timestamp> folder
-            for scene_folder in os.listdir(result_path):
-                scene_path = os.path.join(result_path, scene_folder, 'images')
-                if os.path.exists(scene_path):
-                    # Construct the corresponding output folder in generate_mvimages
-                    length = len(target_numbers)
-                    scene_output_folder = os.path.join(mv_images_dir, f"{result_folder}_{scene_folder}_{length}", 'images')
-                    filter_images_by_number(scene_path, target_numbers, scene_output_folder)
+
+    for scene_folder in os.listdir(source_dir):
+        scene_path = os.path.join(source_dir, scene_folder, 'images')
+        if os.path.exists(scene_path):
+                # Construct the corresponding output folder in generate_mvimages
+                length = len(target_numbers)
+                scene_output_folder = os.path.join(mv_images_dir, f"{source_dir.split('/')[2]}",f"{scene_folder}_{length}", 'images')
+                filter_images_by_number(scene_path, target_numbers, scene_output_folder)
 
 # Example usage:
-target_image_numbers = [i for i in range(0, 719, 36)]  # Assuming 360 images, filtering every 36th image
-source_dir = './outputs'  # Path to the outputs directory
+target_image_numbers = [i for i in range(0, 719, 36)]  # Assuming 720 images, filtering every 36th image
+source_dir = './outputs/results--20241011-205152'  # Path to the source path directory
 mv_images_dir = '../generate_mvimages'  # Path to the generate_mvimages folder
 process_all_scenes(source_dir, target_image_numbers, mv_images_dir)

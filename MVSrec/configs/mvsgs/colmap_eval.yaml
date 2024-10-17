@@ -15,10 +15,12 @@ train_dataset:
     data_root: 'examples'
     split: 'train'
     input_h_w: [640, 960]
+    # input_h_w: [1280, 728]
     input_ratio: 1.
 
 test_dataset:
     data_root: 'examples'
     split: 'test'
     input_h_w: [640, 960]
+    # input_h_w: [1280, 728]
     input_ratio: 1.

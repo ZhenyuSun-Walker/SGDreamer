@@ -9,8 +9,8 @@ from plyfile import PlyData, PlyElement
 # Filter hyperparameter Settings  
 ########################
 s = 1
-dist_base = 1/8 # 1/8
-rel_diff_base = 1/10 # 1/10
+dist_base = 100 # 1/8
+rel_diff_base = 100 # 1/10
 ########################
 
 def read_pfm(filename):
