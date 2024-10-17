@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument('--fov', 
                         type=int, default=90, help='angle range of perspective')
     parser.add_argument('--output_size', 
-                        type=int, nargs=2, default=[1440, 960], help='output image size (width, height)')
+                        type=int, nargs=2, default=[1280, 727], help='output image size (width, height)')
     return parser.parse_args()
 
 class Equirectangular:
@@ -99,17 +99,18 @@ args = parse_args()
 # 加载全景图像
 equ = Equirectangular(args.source)
 
-# 定义输出目录
-output_folder = '../generate_mvimages'
+# 获取时间戳用于命名输出文件夹
+timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+
+# 定义输出目录结构，并使用场景名保存
+output_folder = f'../generate_mvimages/results--20241017-204132/{args.output}'
 os.makedirs(output_folder, exist_ok=True)
-output_dir = os.path.join(output_folder, f"{datetime.now().strftime('%Y%m%d-%H%M%S')}_{args.output}_fov{args.fov}_pose")
-os.makedirs(output_dir, exist_ok=True)
 
 # 提取透视图像
-for angle in range(0, 360, 1):
+for angle in range(0, 720, 36):
     R = create_rotation_matrix(angle)
     T = np.array([0, 0, 0])  # No translation
     perspective_img = equ.GetPerspective(args.fov, R, T, args.output_size[1], args.output_size[0])
     
-    output_filename = os.path.join(output_dir, f'{angle}.png')
+    output_filename = os.path.join(output_folder, f'{angle}.png')
     cv2.imwrite(output_filename, perspective_img)
