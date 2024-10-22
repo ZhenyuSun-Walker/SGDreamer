@@ -45,7 +45,6 @@ if __name__ == "__main__":
         train_dataset = Scannetdataset(config['dataset'], mode='train')
         val_dataset = Scannetdataset(config['dataset'], mode='val')
 
-    # 添加调试信息
     print(f"Training dataset size: {len(train_dataset)}")
     print(f"Validation dataset size: {len(val_dataset)}")
 
