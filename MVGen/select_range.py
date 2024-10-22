@@ -40,6 +40,6 @@ def process_all_scenes(source_dir, target_numbers, mv_images_dir):
 
 # Example usage:
 target_image_numbers = [i for i in range(0, 719, 36)]  # Assuming 720 images, filtering every 36th image
-source_dir = './outputs/results--20241011-205152'  # Path to the source path directory
+source_dir = './outputs/results--20241018-224153'  # Path to the source path directory
 mv_images_dir = '../generate_mvimages'  # Path to the generate_mvimages folder
 process_all_scenes(source_dir, target_image_numbers, mv_images_dir)

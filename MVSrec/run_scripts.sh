@@ -1,6 +1,7 @@
 #!/bin/bash
+set CUDA_VISIBLE_DEVICES=6
 
-SCENE_DIR="../generate_mvimages/results--20241011-205152"      
+SCENE_DIR="../generate_mvimages/results--20241017-230436"      
 PLY_PATH="mvsgs_pointcloud"  
 ITER="3000"                  
 
