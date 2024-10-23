@@ -7,7 +7,7 @@ from transformers import CLIPTextModel, CLIPTokenizer
 import numpy as np
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from .models.pano.MVGenModel import MultiViewBaseModel
-
+import torch.nn.functional as F
 
 class PanoGenerator(pl.LightningModule):
     def __init__(self, config):
@@ -28,7 +28,7 @@ class PanoGenerator(pl.LightningModule):
         self.mv_base_model = MultiViewBaseModel(
             unet, config['model'])
         self.trainable_params = self.mv_base_model.trainable_parameters
-
+        
         self.save_hyperparameters()
        
     def load_model(self, model_id):
@@ -121,15 +121,43 @@ class PanoGenerator(pl.LightningModule):
 
         noise = torch.randn_like(latents)
         noise_z = self.scheduler.add_noise(latents, noise, t)
-        t = t[:, None].repeat(1, latents.shape[1])
-        denoise = self.mv_base_model(
-            noise_z, t, prompt_embds, meta)
-        target = noise       
+        t = t[:, None].repeat(1, latents.shape[1])       
 
-        # eps mode
-        loss = torch.nn.functional.mse_loss(denoise, target)
-        self.log('train_loss', loss)
-        return loss
+        noise_pred = self.mv_base_model(noise_z, t, prompt_embds, meta)
+        target = noise
+
+        # loss_mse
+        loss_eps_mode = torch.nn.functional.mse_loss(noise_pred, target)
+
+        # noise prediction (24/10/23)
+        with torch.no_grad():
+            noise_pred_uncond, noise_pred_text = noise_pred.chunk(2, dim=0)
+            noise_pred = noise_pred_uncond + self.guidance_scale * (noise_pred_text - noise_pred_uncond)
+
+            w = (1 - self.scheduler.alphas_cumprod[t]).view(-1, 1, 1, 1)
+            alpha = self.scheduler.alphas_cumprod[t].view(-1, 1, 1, 1) ** 0.5
+            sigma = (1 - self.scheduler.alphas_cumprod[t].view(-1, 1, 1, 1)) ** 0.5
+
+        latents_pred = (noise_z - sigma * (noise_pred + noise)) / alpha
+        images_pred = self.decode_latent(latents_pred, self.vae).clamp(-1, 1)
+
+        # add latent and image loss computation (24/10/23)
+        B = latents.shape[0]
+        loss_latent_sds = (F.mse_loss(noise_z, latents_pred, reduction="none").sum([1, 2, 3]) * w * alpha / sigma).sum() / B
+        loss_image_sds = (F.mse_loss(batch['images'], images_pred, reduction="none").sum([1, 2, 3]) * w * alpha / sigma).sum() / B
+
+        # 3. learnable embeddings loss (if necessary) (24/10/23)
+        if hasattr(self.mv_base_model, 'learnable_text_embeddings'):
+            noise_pred_learnable = self.mv_base_model(noise_z, t, self.mv_base_model.learnable_text_embeddings, meta).sample
+            loss_embedding = F.mse_loss(noise_pred_learnable, noise, reduction="mean")
+        else:
+            loss_embedding = 0
+
+        # total loss (24/10/23)
+        total_loss = loss_eps_mode + loss_latent_sds + loss_image_sds + loss_embedding
+
+        self.log('train_loss', total_loss)
+        return total_loss
 
     def gen_cls_free_guide_pair(self, latents, timestep, prompt_embd, batch):
         latents = torch.cat([latents]*2)
