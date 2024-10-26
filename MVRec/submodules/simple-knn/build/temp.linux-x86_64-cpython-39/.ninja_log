@@ -1,0 +1,4 @@
+# ninja log v5
+0	13029	1729048781686004672	/home/sunzhenyu/Projects/MVGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-39/simple_knn.o	cb2e55b9c1697c54
+0	19559	1729048788221934719	/home/sunzhenyu/Projects/MVGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-39/ext.o	27d68786365d5087
+0	54165	1729048822805564641	/home/sunzhenyu/Projects/MVGS/submodules/simple-knn/build/temp.linux-x86_64-cpython-39/spatial.o	69211adc00f7d6a1

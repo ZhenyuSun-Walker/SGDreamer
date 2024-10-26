@@ -1,0 +1,11 @@
+{"time":"2024-10-20T15:50:08.52736031+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T15:50:08.527374212+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_155008-o7wy3jq4/logs/debug-core.log"}
+{"time":"2024-10-20T15:50:08.534956641+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T15:50:08.548670237+08:00","level":"INFO","msg":"created new stream","id":"o7wy3jq4"}
+{"time":"2024-10-20T15:50:08.5487317+08:00","level":"INFO","msg":"stream: started","id":"o7wy3jq4"}
+{"time":"2024-10-20T15:50:08.548759816+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"o7wy3jq4"}}
+{"time":"2024-10-20T15:50:08.548768384+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"o7wy3jq4"}}
+{"time":"2024-10-20T15:50:08.548748533+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"o7wy3jq4"}}
+{"time":"2024-10-20T15:50:09.248305243+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T15:50:09.250800919+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T15:50:19.367052384+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}

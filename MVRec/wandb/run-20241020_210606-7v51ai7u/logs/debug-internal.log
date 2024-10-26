@@ -1,0 +1,20 @@
+{"time":"2024-10-20T21:06:06.46203384+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T21:06:06.462050819+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_210606-7v51ai7u/logs/debug-core.log"}
+{"time":"2024-10-20T21:06:06.463690665+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T21:06:06.477470785+08:00","level":"INFO","msg":"created new stream","id":"7v51ai7u"}
+{"time":"2024-10-20T21:06:06.477515051+08:00","level":"INFO","msg":"stream: started","id":"7v51ai7u"}
+{"time":"2024-10-20T21:06:06.477542048+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:06:06.477541463+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:06:06.477544119+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:06:07.388422878+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T21:06:07.390114033+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T21:06:17.519070313+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T21:31:49.884363918+08:00","level":"INFO","msg":"stream: closing","id":"7v51ai7u"}
+{"time":"2024-10-20T21:31:49.884461149+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T21:31:49.889288874+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T21:31:54.889189798+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T21:32:30.597768956+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T21:32:32.51688884+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:32:32.516969024+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:32:32.516967552+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"7v51ai7u"}}
+{"time":"2024-10-20T21:32:32.517083351+08:00","level":"INFO","msg":"stream: closed","id":"7v51ai7u"}

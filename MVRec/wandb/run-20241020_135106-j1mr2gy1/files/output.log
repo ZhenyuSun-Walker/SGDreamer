@@ -1,0 +1,23 @@
+Optimizing
+Output folder: ./output/kitchen
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+viewpoint_stack: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+viewpoint_stack_gt: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+Training progress:   2%|▊                                               | 500/30000 [21:29<38:20:47,  4.68s/it, Loss=0.0649840]/home/sunzhenyu/Projects/MVGS/train.py:510: MatplotlibDeprecationWarning: The tostring_rgb function was deprecated in Matplotlib 3.8 and will be removed in 3.10. Use buffer_rgba instead.
+ATE tensor(0.0441, dtype=torch.float64)
+  image_from_plot = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[ITER 500] Evaluating test: L1 0.022970737889409065 PSNR 27.796478271484375
+
+[ITER 500] Evaluating train: L1 0.022482115775346756 PSNR 28.391925430297853
+Training progress:   2%|▊                                               | 540/30000 [24:46<38:57:42,  4.76s/it, Loss=0.0594164]

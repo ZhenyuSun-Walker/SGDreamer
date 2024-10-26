@@ -1,0 +1,17 @@
+Optimizing
+Output folder: ./output/bathroom
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+viewpoint_stack: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+viewpoint_stack_gt: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+Training progress:   0%|                                                                                          | 0/5000 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 893, in <module>
+    training(lp.extract(args), op.extract(args), pp.extract(args), args.test_iterations, args.save_iterations, args.checkpoint_iterations, args.start_checkpoint, args.debug_from,args)
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 593, in training
+    training_report(tb_writer, iteration, Ll1, loss, l1_loss, iter_start.elapsed_time(iter_end), testing_iterations, scene, render, (pipe, background),transf_params=transf_params,focal_params=focal_params, viewpoint_stack=viewpoint_stack)
+TypeError: training_report() got an unexpected keyword argument 'transf_params'

@@ -1,0 +1,20 @@
+{"time":"2024-10-19T22:36:10.407589598+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-19T22:36:10.407602098+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241019_223610-nxb93f8l/logs/debug-core.log"}
+{"time":"2024-10-19T22:36:10.409310315+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-19T22:36:10.447291634+08:00","level":"INFO","msg":"created new stream","id":"nxb93f8l"}
+{"time":"2024-10-19T22:36:10.447349241+08:00","level":"INFO","msg":"stream: started","id":"nxb93f8l"}
+{"time":"2024-10-19T22:36:10.447362413+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:10.447391458+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:10.447401669+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:11.33877262+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-19T22:36:11.340277048+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-19T22:36:15.408681575+08:00","level":"INFO","msg":"stream: closing","id":"nxb93f8l"}
+{"time":"2024-10-19T22:36:15.408730753+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-19T22:36:15.412311813+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-19T22:36:20.412216634+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-19T22:36:21.51906827+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-19T22:36:25.99381528+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-19T22:36:26.886656976+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:26.886755739+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:26.886744931+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nxb93f8l"}}
+{"time":"2024-10-19T22:36:26.886924253+08:00","level":"INFO","msg":"stream: closed","id":"nxb93f8l"}

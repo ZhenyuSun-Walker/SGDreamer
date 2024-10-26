@@ -1,0 +1,19 @@
+{"time":"2024-10-21T18:04:16.290011236+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-21T18:04:16.290035386+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241021_180416-dhbatcic/logs/debug-core.log"}
+{"time":"2024-10-21T18:04:16.291939691+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-21T18:04:16.304136181+08:00","level":"INFO","msg":"created new stream","id":"dhbatcic"}
+{"time":"2024-10-21T18:04:16.304210588+08:00","level":"INFO","msg":"stream: started","id":"dhbatcic"}
+{"time":"2024-10-21T18:04:16.304225181+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:16.304257552+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:16.304252783+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:17.576818871+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-21T18:04:17.578274335+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-21T18:04:25.67429813+08:00","level":"INFO","msg":"stream: closing","id":"dhbatcic"}
+{"time":"2024-10-21T18:04:25.674347829+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-21T18:04:25.67793247+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-21T18:04:27.695011177+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-21T18:04:29.47552817+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-21T18:04:30.103155997+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:30.10323865+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:30.10323769+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dhbatcic"}}
+{"time":"2024-10-21T18:04:30.103423067+08:00","level":"INFO","msg":"stream: closed","id":"dhbatcic"}

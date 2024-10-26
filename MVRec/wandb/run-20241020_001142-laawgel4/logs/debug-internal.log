@@ -1,0 +1,20 @@
+{"time":"2024-10-20T00:11:42.507717471+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T00:11:42.507728371+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_001142-laawgel4/logs/debug-core.log"}
+{"time":"2024-10-20T00:11:42.51383269+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T00:11:42.526929151+08:00","level":"INFO","msg":"created new stream","id":"laawgel4"}
+{"time":"2024-10-20T00:11:42.526972317+08:00","level":"INFO","msg":"stream: started","id":"laawgel4"}
+{"time":"2024-10-20T00:11:42.527006468+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:11:42.526988373+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:11:42.527006208+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:11:46.861637625+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T00:11:46.862365365+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T00:11:46.986485555+08:00","level":"INFO","msg":"stream: closing","id":"laawgel4"}
+{"time":"2024-10-20T00:11:46.986546287+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T00:11:46.989224701+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T00:11:51.988930785+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T00:11:56.987606749+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T00:12:00.99733973+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T00:12:01.618875159+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:12:01.618912892+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:12:01.618966061+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"laawgel4"}}
+{"time":"2024-10-20T00:12:01.619036066+08:00","level":"INFO","msg":"stream: closed","id":"laawgel4"}

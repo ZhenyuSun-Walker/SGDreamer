@@ -1,0 +1,22 @@
+{"time":"2024-10-20T13:21:39.867936086+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T13:21:39.867947951+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_132139-1tl3yfra/logs/debug-core.log"}
+{"time":"2024-10-20T13:21:39.873939173+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T13:21:39.88448698+08:00","level":"INFO","msg":"created new stream","id":"1tl3yfra"}
+{"time":"2024-10-20T13:21:39.884572041+08:00","level":"INFO","msg":"stream: started","id":"1tl3yfra"}
+{"time":"2024-10-20T13:21:39.884612559+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:21:39.884618142+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:21:39.88459761+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:21:40.781175657+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T13:21:40.782444088+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T13:21:50.903158228+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T13:42:27.721021742+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/1tl3yfra/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T13:49:24.088690282+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/1tl3yfra/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T13:50:55.110187447+08:00","level":"INFO","msg":"stream: closing","id":"1tl3yfra"}
+{"time":"2024-10-20T13:50:55.110254697+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T13:50:55.114746314+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T13:50:59.211815061+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T13:51:00.114035186+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T13:51:00.294282369+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:51:00.294357674+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:51:00.294385616+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"1tl3yfra"}}
+{"time":"2024-10-20T13:51:00.29455627+08:00","level":"INFO","msg":"stream: closed","id":"1tl3yfra"}

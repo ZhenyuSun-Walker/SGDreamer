@@ -1,0 +1,28 @@
+Optimizing
+Output folder: ./output/sunroom
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+viewpoint_stack: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+viewpoint_stack_gt: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+Training progress:   2%|▊                                                | 500/30000 [01:23<2:02:20,  4.02it/s, Loss=0.1569461]/home/sunzhenyu/Projects/MVGS/train.py:555: MatplotlibDeprecationWarning: The tostring_rgb function was deprecated in Matplotlib 3.8 and will be removed in 3.10. Use buffer_rgba instead.
+ATE tensor(0.0106, dtype=torch.float64)
+  image_from_plot = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[ITER 500] Evaluating test: L1 0.07840746641159058 PSNR 17.860971450805664
+
+[ITER 500] Evaluating train: L1 0.08877530544996262 PSNR 16.97699031829834
+Training progress:   2%|▉                                                | 600/30000 [02:00<2:18:32,  3.54it/s, Loss=0.1353462]Traceback (most recent call last):
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 783, in <module>
+    training(lp.extract(args), op.extract(args), pp.extract(args), args.test_iterations, args.save_iterations, args.checkpoint_iterations, args.start_checkpoint, args.debug_from,args)
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 637, in training
+    gaussians.densify_and_prune(opt.densify_grad_threshold, 0.005, scene.cameras_extent, size_threshold)
+TypeError: densify_and_prune() missing 2 required positional arguments: 'cams' and 'boxes'

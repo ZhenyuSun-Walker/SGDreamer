@@ -1,0 +1,20 @@
+{"time":"2024-10-21T16:47:43.414333001+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-21T16:47:43.41434952+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241021_164743-gaslnai2/logs/debug-core.log"}
+{"time":"2024-10-21T16:47:43.415969718+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-21T16:47:43.426821626+08:00","level":"INFO","msg":"created new stream","id":"gaslnai2"}
+{"time":"2024-10-21T16:47:43.426847765+08:00","level":"INFO","msg":"stream: started","id":"gaslnai2"}
+{"time":"2024-10-21T16:47:43.42687747+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T16:47:43.426871259+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T16:47:43.426879755+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T16:47:44.106078055+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-21T16:47:44.107690293+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-21T16:47:54.243007388+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-21T17:01:24.968353174+08:00","level":"INFO","msg":"stream: closing","id":"gaslnai2"}
+{"time":"2024-10-21T17:01:24.968409874+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-21T17:01:24.972851447+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-21T17:01:29.971917102+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-21T17:01:41.748714703+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-21T17:01:42.465584126+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T17:01:42.465693584+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T17:01:42.465679828+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"gaslnai2"}}
+{"time":"2024-10-21T17:01:42.465886592+08:00","level":"INFO","msg":"stream: closed","id":"gaslnai2"}

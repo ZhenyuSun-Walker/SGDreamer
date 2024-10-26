@@ -1,0 +1,20 @@
+{"time":"2024-10-20T11:51:44.888573646+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T11:51:44.888583393+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_115144-89503oj3/logs/debug-core.log"}
+{"time":"2024-10-20T11:51:44.890274697+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T11:51:44.904039649+08:00","level":"INFO","msg":"created new stream","id":"89503oj3"}
+{"time":"2024-10-20T11:51:44.90410725+08:00","level":"INFO","msg":"stream: started","id":"89503oj3"}
+{"time":"2024-10-20T11:51:44.904120543+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T11:51:44.904125756+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T11:51:44.904136563+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T11:51:45.593354004+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T11:51:45.593926918+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T11:51:55.715453242+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T12:22:08.510173701+08:00","level":"INFO","msg":"stream: closing","id":"89503oj3"}
+{"time":"2024-10-20T12:22:08.510229415+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T12:22:08.514773393+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T12:22:13.514229689+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T12:22:18.281535695+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T12:22:19.452227572+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T12:22:19.452350619+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T12:22:19.452373322+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"89503oj3"}}
+{"time":"2024-10-20T12:22:19.452625568+08:00","level":"INFO","msg":"stream: closed","id":"89503oj3"}

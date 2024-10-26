@@ -1,0 +1,20 @@
+{"time":"2024-10-20T01:12:04.299453984+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T01:12:04.29947134+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_011204-hlph67j1/logs/debug-core.log"}
+{"time":"2024-10-20T01:12:04.305883726+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T01:12:04.3172958+08:00","level":"INFO","msg":"created new stream","id":"hlph67j1"}
+{"time":"2024-10-20T01:12:04.317335676+08:00","level":"INFO","msg":"stream: started","id":"hlph67j1"}
+{"time":"2024-10-20T01:12:04.317350882+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:12:04.317361085+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:12:04.317371541+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:12:05.092922329+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T01:12:05.09422805+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T01:12:15.215031414+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T01:14:38.605229071+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/hlph67j1/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T01:41:09.350248427+08:00","level":"INFO","msg":"stream: closing","id":"hlph67j1"}
+{"time":"2024-10-20T01:41:09.350335706+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T01:41:09.354544228+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T01:41:13.147370152+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T01:41:14.095416769+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:41:14.095502125+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:41:14.095488842+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hlph67j1"}}
+{"time":"2024-10-20T01:41:14.095721497+08:00","level":"INFO","msg":"stream: closed","id":"hlph67j1"}

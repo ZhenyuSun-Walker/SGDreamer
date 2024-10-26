@@ -1,0 +1,1 @@
+{"train_loss_patches/ATE":1.165522e-16,"_wandb":{"runtime":6},"_runtime":6.255810638,"train_loss_patches/Focal_GT_X":1.5518007,"_timestamp":1.7294802155877955e+09,"train_loss_patches/cam_lr":5e-05,"global_step":1,"train_loss_patches/Focal_Est_Y":1.0181372,"_step":5,"train_loss_patches/Focal_GT_Y":1.0181372,"train_loss_patches/Focal_Est_X":1.5518007}

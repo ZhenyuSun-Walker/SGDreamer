@@ -1,0 +1,20 @@
+{"time":"2024-10-20T14:38:04.323868437+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T14:38:04.32388165+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_143804-2orrbomz/logs/debug-core.log"}
+{"time":"2024-10-20T14:38:04.325194173+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T14:38:04.335917135+08:00","level":"INFO","msg":"created new stream","id":"2orrbomz"}
+{"time":"2024-10-20T14:38:04.335972553+08:00","level":"INFO","msg":"stream: started","id":"2orrbomz"}
+{"time":"2024-10-20T14:38:04.336006947+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:38:04.336042927+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:38:04.336004726+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:38:05.14576505+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T14:38:05.146689339+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T14:38:15.265460897+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T14:40:03.30700868+08:00","level":"INFO","msg":"stream: closing","id":"2orrbomz"}
+{"time":"2024-10-20T14:40:03.30705153+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T14:40:03.310287244+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T14:40:08.310014551+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T14:40:10.217859246+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T14:40:10.922103475+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:40:10.922182253+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:40:10.922211517+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"2orrbomz"}}
+{"time":"2024-10-20T14:40:10.92237065+08:00","level":"INFO","msg":"stream: closed","id":"2orrbomz"}

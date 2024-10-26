@@ -1,0 +1,20 @@
+{"time":"2024-10-20T14:23:41.376168501+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T14:23:41.376182484+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_142341-sibxi558/logs/debug-core.log"}
+{"time":"2024-10-20T14:23:41.380414185+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T14:23:41.391617894+08:00","level":"INFO","msg":"created new stream","id":"sibxi558"}
+{"time":"2024-10-20T14:23:41.391644643+08:00","level":"INFO","msg":"stream: started","id":"sibxi558"}
+{"time":"2024-10-20T14:23:41.391656002+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:23:41.391703366+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:23:41.391710263+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:23:42.147604244+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T14:23:42.148787824+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T14:23:52.29435193+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T14:25:53.922132307+08:00","level":"INFO","msg":"stream: closing","id":"sibxi558"}
+{"time":"2024-10-20T14:25:53.922172644+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T14:25:53.934633552+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T14:25:58.933784669+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T14:26:02.796025678+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T14:26:04.223918239+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:26:04.224000024+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:26:04.224085366+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"sibxi558"}}
+{"time":"2024-10-20T14:26:04.22409548+08:00","level":"INFO","msg":"stream: closed","id":"sibxi558"}

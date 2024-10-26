@@ -1,0 +1,24 @@
+{"time":"2024-10-20T01:41:20.429059766+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T01:41:20.429074142+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_014120-kmav0jsr/logs/debug-core.log"}
+{"time":"2024-10-20T01:41:20.436439604+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T01:41:20.446913198+08:00","level":"INFO","msg":"created new stream","id":"kmav0jsr"}
+{"time":"2024-10-20T01:41:20.44695072+08:00","level":"INFO","msg":"stream: started","id":"kmav0jsr"}
+{"time":"2024-10-20T01:41:20.446983564+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T01:41:20.44697449+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T01:41:20.44697425+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T01:41:21.102581638+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T01:41:21.103646492+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T01:41:31.230423115+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T01:48:21.195378224+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded"}
+{"time":"2024-10-20T01:55:04.551184834+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/kmav0jsr/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T01:58:54.291447252+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/kmav0jsr/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T01:59:47.497598857+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/kmav0jsr/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T02:10:01.602145401+08:00","level":"INFO","msg":"stream: closing","id":"kmav0jsr"}
+{"time":"2024-10-20T02:10:01.602189937+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T02:10:01.606264828+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T02:10:05.871051706+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T02:10:06.606059395+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T02:10:06.842165219+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T02:10:06.842251528+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T02:10:06.842250528+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"kmav0jsr"}}
+{"time":"2024-10-20T02:10:06.842450265+08:00","level":"INFO","msg":"stream: closed","id":"kmav0jsr"}

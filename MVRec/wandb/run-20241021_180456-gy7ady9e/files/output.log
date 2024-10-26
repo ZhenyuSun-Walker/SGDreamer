@@ -1,0 +1,216 @@
+Optimizing
+Output folder: ./output/bathroom
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+Training progress:   0%|                                                                                                                         | 0/3000 [00:00<?, ?it/s]/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+Saved rendered image for camera 0 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 1 to rendered_images/bathroom/iteration_1/rendered_image_19.png
+  warnings.warn(
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[ITER 1] Evaluating test: L1 0.10314759239554405 PSNR 14.904882431030273
+
+[ITER 1] Evaluating train: L1 0.10570505261421204 PSNR 15.11004981994629
+
+[ITER 1] Saving Gaussians
+Training progress:  17%|███████████████▊                                                                               | 500/3000 [02:31<18:31,  2.25it/s, Loss=0.0111770]/home/sunzhenyu/Projects/MVGS/train.py:551: MatplotlibDeprecationWarning: The tostring_rgb function was deprecated in Matplotlib 3.8 and will be removed in 3.10. Use buffer_rgba instead.
+Saved rendered image for camera 0 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 500 to rendered_images/bathroom/iteration_500/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+  image_from_plot = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+
+[ITER 500] Evaluating test: L1 0.0078345718793571 PSNR 34.372074127197266
+
+[ITER 500] Evaluating train: L1 0.011100397631525994 PSNR 31.336536788940432
+
+[ITER 500] Saving Gaussians
+Training progress:  20%|███████████████████                                                                            | 600/3000 [03:06<09:12,  4.35it/s, Loss=0.0146675]/home/sunzhenyu/Projects/MVGS/scene/gaussian_model.py:420: UserWarning: Using torch.cross without specifying the dim arg is deprecated.
+Please either pass the dim explicitly or simply use torch.linalg.cross.
+The default value of dim will change to agree with that of linalg.cross in a future release. (Triggered internally at ../aten/src/ATen/native/Cross.cpp:62.)
+  cross_dir = torch.cross(ray1_dir, ray2_dir)
+Training progress:  50%|██████████████████████████████████████████████▋                                               | 1490/3000 [06:57<05:20,  4.72it/s, Loss=0.0093987]
+Saved rendered image for camera 0 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 1000 to rendered_images/bathroom/iteration_1000/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+
+[ITER 1000] Evaluating test: L1 0.007977312197908759 PSNR 34.90085411071777
+
+[ITER 1000] Evaluating train: L1 0.008110208995640278 PSNR 34.92961769104004
+
+[ITER 1000] Saving Gaussians
+Saved rendered image for camera 0 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 1500 to rendered_images/bathroom/iteration_1500/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+
+[ITER 1500] Evaluating test: L1 0.005777926417067647 PSNR 37.93883514404297
+
+[ITER 1500] Evaluating train: L1 0.006009800639003516 PSNR 37.74079895019531
+
+[ITER 1500] Saving Gaussians
+Saved rendered image for camera 0 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 2000 to rendered_images/bathroom/iteration_2000/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+
+[ITER 2000] Evaluating test: L1 0.004786616074852645 PSNR 39.326215744018555
+
+[ITER 2000] Evaluating train: L1 0.005405164510011673 PSNR 39.31196441650391
+
+[ITER 2000] Saving Gaussians
+Saved rendered image for camera 0 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 2500 to rendered_images/bathroom/iteration_2500/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+
+[ITER 2500] Evaluating test: L1 0.0038252517115324736 PSNR 41.26509094238281
+
+[ITER 2500] Evaluating train: L1 0.004186251852661371 PSNR 41.316296386718754
+
+[ITER 2500] Saving Gaussians
+Saved rendered image for camera 0 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 3000 to rendered_images/bathroom/iteration_3000/rendered_image_19.png
+increase sh degree
+ATE tensor(1.1655e-16, dtype=torch.float64)
+
+[ITER 3000] Evaluating test: L1 0.003701500711031258 PSNR 41.491899490356445
+
+[ITER 3000] Evaluating train: L1 0.003906746301800013 PSNR 41.928964996337896
+
+[ITER 3000] Saving Gaussians
+
+Training complete.

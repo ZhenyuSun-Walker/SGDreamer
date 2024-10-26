@@ -1,0 +1,20 @@
+{"time":"2024-10-20T14:31:25.779825132+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T14:31:25.779838065+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_143125-fhodi5tf/logs/debug-core.log"}
+{"time":"2024-10-20T14:31:25.78167796+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T14:31:25.790627338+08:00","level":"INFO","msg":"created new stream","id":"fhodi5tf"}
+{"time":"2024-10-20T14:31:25.790658273+08:00","level":"INFO","msg":"stream: started","id":"fhodi5tf"}
+{"time":"2024-10-20T14:31:25.790677463+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:31:25.79069234+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:31:25.790683191+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:31:26.519404867+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T14:31:26.520252511+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T14:31:36.655264364+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T14:33:26.205287356+08:00","level":"INFO","msg":"stream: closing","id":"fhodi5tf"}
+{"time":"2024-10-20T14:33:26.205342963+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T14:33:26.209063855+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T14:33:31.208560689+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T14:33:32.975330089+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T14:33:33.755498926+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:33:33.755611931+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:33:33.755587609+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"fhodi5tf"}}
+{"time":"2024-10-20T14:33:33.755749278+08:00","level":"INFO","msg":"stream: closed","id":"fhodi5tf"}

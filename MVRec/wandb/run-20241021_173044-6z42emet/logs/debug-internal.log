@@ -1,0 +1,13 @@
+{"time":"2024-10-21T17:30:44.688158799+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-21T17:30:44.68818749+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241021_173044-6z42emet/logs/debug-core.log"}
+{"time":"2024-10-21T17:30:44.690178679+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-21T17:30:44.703574638+08:00","level":"INFO","msg":"created new stream","id":"6z42emet"}
+{"time":"2024-10-21T17:30:44.703620672+08:00","level":"INFO","msg":"stream: started","id":"6z42emet"}
+{"time":"2024-10-21T17:30:44.703651893+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"6z42emet"}}
+{"time":"2024-10-21T17:30:44.70364764+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"6z42emet"}}
+{"time":"2024-10-21T17:30:44.703641487+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"6z42emet"}}
+{"time":"2024-10-21T17:30:45.382114135+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-21T17:30:45.383490813+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-21T17:30:55.498942085+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-21T17:31:16.90490924+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/MVGS/6z42emet/file_stream"}
+{"time":"2024-10-21T17:31:16.905002747+08:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/sunz88313-south-china-university-of-technology/MVGS/6z42emet/file_stream: {\"error\":\"run MVGS/6z42emet not found while streaming file\"}"}

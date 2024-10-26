@@ -1,0 +1,22 @@
+{"time":"2024-10-20T00:41:56.299219797+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T00:41:56.299232376+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_004156-c81ter5k/logs/debug-core.log"}
+{"time":"2024-10-20T00:41:56.302805057+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T00:41:56.316432951+08:00","level":"INFO","msg":"created new stream","id":"c81ter5k"}
+{"time":"2024-10-20T00:41:56.316484978+08:00","level":"INFO","msg":"stream: started","id":"c81ter5k"}
+{"time":"2024-10-20T00:41:56.316521936+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T00:41:56.316514771+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T00:41:56.31651349+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T00:41:57.04526683+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T00:41:57.046443145+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T00:42:07.167273831+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T00:51:01.646060988+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/c81ter5k/file_stream\": read tcp 10.0.3.226:52662->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2024-10-20T00:59:38.151626974+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/c81ter5k/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T01:00:14.696250692+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/sunz88313-south-china-university-of-technology/gaussian-barf/c81ter5k/file_stream\": unexpected EOF"}
+{"time":"2024-10-20T01:11:53.231352007+08:00","level":"INFO","msg":"stream: closing","id":"c81ter5k"}
+{"time":"2024-10-20T01:11:53.231386055+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T01:11:53.235929396+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T01:11:57.156343094+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T01:11:57.980816263+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T01:11:57.980922907+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T01:11:57.98090474+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"c81ter5k"}}
+{"time":"2024-10-20T01:11:57.981124233+08:00","level":"INFO","msg":"stream: closed","id":"c81ter5k"}

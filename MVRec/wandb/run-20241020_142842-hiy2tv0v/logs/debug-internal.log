@@ -1,0 +1,20 @@
+{"time":"2024-10-20T14:28:42.360972416+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T14:28:42.360993017+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_142842-hiy2tv0v/logs/debug-core.log"}
+{"time":"2024-10-20T14:28:42.366819792+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T14:28:42.382031066+08:00","level":"INFO","msg":"created new stream","id":"hiy2tv0v"}
+{"time":"2024-10-20T14:28:42.382069279+08:00","level":"INFO","msg":"stream: started","id":"hiy2tv0v"}
+{"time":"2024-10-20T14:28:42.382141006+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:28:42.382251106+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:28:42.382099978+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:28:43.107247335+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T14:28:43.108399014+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T14:28:53.298840215+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T14:30:52.016470201+08:00","level":"INFO","msg":"stream: closing","id":"hiy2tv0v"}
+{"time":"2024-10-20T14:30:52.016497332+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T14:30:52.020592299+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T14:30:57.02003662+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T14:30:57.616542171+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T14:30:58.879015349+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:30:58.879118907+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:30:58.879114051+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hiy2tv0v"}}
+{"time":"2024-10-20T14:30:58.879270116+08:00","level":"INFO","msg":"stream: closed","id":"hiy2tv0v"}

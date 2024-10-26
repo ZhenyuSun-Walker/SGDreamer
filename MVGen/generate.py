@@ -36,7 +36,7 @@ def parse_args():
     parser.add_argument('--deg', type=int, default=45, help='degree')
     parser.add_argument('--gen_video', action='store_true', help='generate video')
     parser.add_argument('--save_frames', action='store_true')
-    parser.add_argument('--prompt_folder', type=str, default='prompt', help='path to prompt folder')
+    parser.add_argument('--prompt_folder', type=str, default='prompt/indoor', help='path to prompt folder')
  
     return parser.parse_args()
 
@@ -90,7 +90,7 @@ def main():
     config_file = 'configs/pano_generation.yaml'
     config = yaml.load(open(config_file, 'rb'), Loader=yaml.SafeLoader)
     model = PanoGenerator(config)
-    model.load_state_dict(torch.load('weights/pano.ckpt', map_location='cpu')['state_dict'], strict=True)
+    model.load_state_dict(torch.load('weights/pano/20241024/last.ckpt', map_location='cpu')['state_dict'], strict=True)
     model = model.cuda()
 
     resolution = config['dataset']['resolution']

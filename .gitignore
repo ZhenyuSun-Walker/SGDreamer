@@ -8,6 +8,7 @@
 *.pyc
 generate_mvimages
 panorama
+MVSrec
 <<<<<<< HEAD
 MVSrec/dataset
 MVSrec/output

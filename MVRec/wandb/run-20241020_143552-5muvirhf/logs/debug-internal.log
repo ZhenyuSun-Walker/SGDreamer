@@ -1,0 +1,20 @@
+{"time":"2024-10-20T14:35:52.67601746+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-20T14:35:52.676028249+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241020_143552-5muvirhf/logs/debug-core.log"}
+{"time":"2024-10-20T14:35:52.678120968+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-20T14:35:52.689302804+08:00","level":"INFO","msg":"created new stream","id":"5muvirhf"}
+{"time":"2024-10-20T14:35:52.689342303+08:00","level":"INFO","msg":"stream: started","id":"5muvirhf"}
+{"time":"2024-10-20T14:35:52.689375958+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:35:52.689373042+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:35:52.689373104+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:35:53.490809003+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-20T14:35:53.491598085+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-20T14:36:03.610564717+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-20T14:37:52.004909356+08:00","level":"INFO","msg":"stream: closing","id":"5muvirhf"}
+{"time":"2024-10-20T14:37:52.004952085+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-20T14:37:52.009463639+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-20T14:37:56.67142265+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-20T14:37:57.008873759+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-20T14:37:57.465999632+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:37:57.466117572+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:37:57.46610863+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"5muvirhf"}}
+{"time":"2024-10-20T14:37:57.466239996+08:00","level":"INFO","msg":"stream: closed","id":"5muvirhf"}

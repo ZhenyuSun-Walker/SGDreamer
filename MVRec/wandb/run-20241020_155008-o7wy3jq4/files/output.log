@@ -1,0 +1,288 @@
+Optimizing
+Output folder: ./output/bathroom
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+viewpoint_stack: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+viewpoint_stack_gt: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+Training progress:   2%|█▍                                                                                       | 500/30000 [01:25<2:05:28,  3.92it/s, Loss=0.0483333]/home/sunzhenyu/Projects/MVGS/train.py:555: MatplotlibDeprecationWarning: The tostring_rgb function was deprecated in Matplotlib 3.8 and will be removed in 3.10. Use buffer_rgba instead.
+ATE tensor(0.0437, dtype=torch.float64)
+  image_from_plot = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[ITER 500] Evaluating test: L1 0.03159078489989042 PSNR 23.519960403442383
+
+[ITER 500] Evaluating train: L1 0.03843965753912926 PSNR 22.977237701416016
+Training progress:  10%|████████▊                                                                               | 3000/30000 [17:14<3:16:25,  2.29it/s, Loss=0.0106656]
+increase sh degree
+ATE tensor(0.0791, dtype=torch.float64)
+
+[ITER 1000] Evaluating test: L1 0.01535349665209651 PSNR 29.48459815979004
+
+[ITER 1000] Evaluating train: L1 0.017891931720077994 PSNR 29.015901184082033
+
+[ITER 1000] Saving Gaussians
+ATE tensor(0.1032, dtype=torch.float64)
+
+[ITER 1500] Evaluating test: L1 0.01127877039834857 PSNR 31.89969825744629
+
+[ITER 1500] Evaluating train: L1 0.012037795037031174 PSNR 32.965993118286136
+
+[ITER 1500] Saving Gaussians
+increase sh degree
+ATE tensor(0.1095, dtype=torch.float64)
+
+[ITER 2000] Evaluating test: L1 0.0101090669631958 PSNR 33.48842716217041
+
+[ITER 2000] Evaluating train: L1 0.011422831378877164 PSNR 32.658914184570314
+
+[ITER 2000] Saving Gaussians
+ATE tensor(0.1100, dtype=torch.float64)
+
+[ITER 2500] Evaluating test: L1 0.008133275667205453 PSNR 35.11307334899902
+
+[ITER 2500] Evaluating train: L1 0.0069742631167173386 PSNR 36.93579940795899
+
+[ITER 2500] Saving Gaussians
+increase sh degree
+ATE tensor(0.1104, dtype=torch.float64)
+
+[ITER 3000] Evaluating test: L1 0.006637367187067866 PSNR 36.147871017456055
+
+[ITER 3000] Evaluating train: L1 0.008451164048165084 PSNR 34.96822738647461
+
+[ITER 3000] Saving Gaussians
+ATE tensor(0.1100, dtype=torch.float64)
+
+[ITER 3500] Evaluating test: L1 0.4893564283847809 PSNR 5.3889665603637695
+
+[ITER 3500] Evaluating train: L1 0.47505264282226567 PSNR 5.6216627120971685
+increase sh degree
+ATE tensor(0.1064, dtype=torch.float64)
+
+[ITER 4000] Evaluating test: L1 0.49397826194763184 PSNR 5.342040061950684
+
+[ITER 4000] Evaluating train: L1 0.4771620571613312 PSNR 5.605258178710938
+ATE tensor(0.1021, dtype=torch.float64)
+
+[ITER 4500] Evaluating test: L1 0.4942331314086914 PSNR 5.340843677520752
+
+[ITER 4500] Evaluating train: L1 0.4786449432373047 PSNR 5.588951778411865
+increase sh degree
+ATE tensor(0.1029, dtype=torch.float64)
+
+[ITER 5000] Evaluating test: L1 0.4936375021934509 PSNR 5.346554279327393
+
+[ITER 5000] Evaluating train: L1 0.4770739018917084 PSNR 5.602613735198975
+ATE tensor(0.1057, dtype=torch.float64)
+
+[ITER 5500] Evaluating test: L1 0.49256089329719543 PSNR 5.361409902572632
+
+[ITER 5500] Evaluating train: L1 0.4756187438964844 PSNR 5.622088527679444
+increase sh degree
+ATE tensor(0.1067, dtype=torch.float64)
+
+[ITER 6000] Evaluating test: L1 0.48790428042411804 PSNR 5.410332679748535
+
+[ITER 6000] Evaluating train: L1 0.4767275989055634 PSNR 5.614178085327149
+ATE tensor(0.1059, dtype=torch.float64)
+
+[ITER 6500] Evaluating test: L1 0.48590387403964996 PSNR 5.425970554351807
+
+[ITER 6500] Evaluating train: L1 0.47435318231582646 PSNR 5.636872291564941
+increase sh degree
+ATE tensor(0.1045, dtype=torch.float64)
+
+[ITER 7000] Evaluating test: L1 0.48564012348651886 PSNR 5.427744150161743
+
+[ITER 7000] Evaluating train: L1 0.47558788657188417 PSNR 5.629898357391358
+
+[ITER 7000] Saving Gaussians
+ATE tensor(0.1040, dtype=torch.float64)
+
+[ITER 7500] Evaluating test: L1 0.4811163395643234 PSNR 5.4884350299835205
+
+[ITER 7500] Evaluating train: L1 0.475869756937027 PSNR 5.633357238769531
+increase sh degree
+ATE tensor(0.1033, dtype=torch.float64)
+
+[ITER 8000] Evaluating test: L1 0.47570832073688507 PSNR 5.558326959609985
+
+[ITER 8000] Evaluating train: L1 0.47140454649925234 PSNR 5.6811493873596195
+ATE tensor(0.1022, dtype=torch.float64)
+
+[ITER 8500] Evaluating test: L1 0.4671187251806259 PSNR 5.653215646743774
+
+[ITER 8500] Evaluating train: L1 0.47335535287857056 PSNR 5.668873310089111
+increase sh degree
+ATE tensor(0.1009, dtype=torch.float64)
+
+[ITER 9000] Evaluating test: L1 0.460006982088089 PSNR 5.750472068786621
+
+[ITER 9000] Evaluating train: L1 0.4690155327320099 PSNR 5.708487701416016
+ATE tensor(0.0998, dtype=torch.float64)
+
+[ITER 9500] Evaluating test: L1 0.45573094487190247 PSNR 5.801660060882568
+
+[ITER 9500] Evaluating train: L1 0.4731953859329224 PSNR 5.672681045532227
+increase sh degree
+ATE tensor(0.0992, dtype=torch.float64)
+
+[ITER 10000] Evaluating test: L1 0.4519526809453964 PSNR 5.8462183475494385
+
+[ITER 10000] Evaluating train: L1 0.4718532383441925 PSNR 5.681934642791749
+ATE tensor(0.0980, dtype=torch.float64)
+
+[ITER 10500] Evaluating test: L1 0.4481362998485565 PSNR 5.8947672843933105
+
+[ITER 10500] Evaluating train: L1 0.47059309482574463 PSNR 5.693099880218506
+increase sh degree
+ATE tensor(0.0978, dtype=torch.float64)
+
+[ITER 11000] Evaluating test: L1 0.44082416594028473 PSNR 5.972810983657837
+
+[ITER 11000] Evaluating train: L1 0.4707063138484955 PSNR 5.698095989227295
+ATE tensor(0.0980, dtype=torch.float64)
+
+[ITER 11500] Evaluating test: L1 0.4410087913274765 PSNR 5.98016619682312
+
+[ITER 11500] Evaluating train: L1 0.4698123633861542 PSNR 5.7033185958862305
+increase sh degree
+ATE tensor(0.0982, dtype=torch.float64)
+
+[ITER 12000] Evaluating test: L1 0.43981002271175385 PSNR 5.990142822265625
+
+[ITER 12000] Evaluating train: L1 0.46932533383369446 PSNR 5.711974048614502
+ATE tensor(0.0982, dtype=torch.float64)
+
+[ITER 12500] Evaluating test: L1 0.44331347942352295 PSNR 5.929075717926025
+
+[ITER 12500] Evaluating train: L1 0.47530599236488347 PSNR 5.6428411483764656
+increase sh degree
+ATE tensor(0.0981, dtype=torch.float64)
+
+[ITER 13000] Evaluating test: L1 0.4508185237646103 PSNR 5.839209794998169
+
+[ITER 13000] Evaluating train: L1 0.4727177143096924 PSNR 5.6663943290710455
+ATE tensor(0.0981, dtype=torch.float64)
+
+[ITER 13500] Evaluating test: L1 0.45068082213401794 PSNR 5.837533473968506
+
+[ITER 13500] Evaluating train: L1 0.4721298813819885 PSNR 5.674147033691407
+increase sh degree
+ATE tensor(0.0979, dtype=torch.float64)
+
+[ITER 14000] Evaluating test: L1 0.4513048827648163 PSNR 5.824541091918945
+
+[ITER 14000] Evaluating train: L1 0.4720913589000702 PSNR 5.675941467285156
+ATE tensor(0.0975, dtype=torch.float64)
+
+[ITER 14500] Evaluating test: L1 0.4669758677482605 PSNR 5.6370062828063965
+
+[ITER 14500] Evaluating train: L1 0.47203058600425724 PSNR 5.677646827697754
+increase sh degree
+ATE tensor(0.0968, dtype=torch.float64)
+
+[ITER 15000] Evaluating test: L1 0.47220852971076965 PSNR 5.580249786376953
+
+[ITER 15000] Evaluating train: L1 0.4731721818447113 PSNR 5.672432231903077
+ATE tensor(0.0984, dtype=torch.float64)
+
+[ITER 15500] Evaluating test: L1 0.35437725484371185 PSNR 8.259027481079102
+
+[ITER 15500] Evaluating train: L1 0.17851255536079408 PSNR 12.630295181274414
+increase sh degree
+ATE tensor(0.0988, dtype=torch.float64)
+
+[ITER 16000] Evaluating test: L1 0.3181268274784088 PSNR 9.614914655685425
+
+[ITER 16000] Evaluating train: L1 0.14402436763048174 PSNR 14.0617094039917
+ATE tensor(0.0987, dtype=torch.float64)
+
+[ITER 16500] Evaluating test: L1 0.31734707206487656 PSNR 9.68149447441101
+
+[ITER 16500] Evaluating train: L1 0.1361188441514969 PSNR 14.439349937438966
+increase sh degree
+ATE tensor(0.0988, dtype=torch.float64)
+
+[ITER 17000] Evaluating test: L1 0.30791303887963295 PSNR 10.212480068206787
+
+[ITER 17000] Evaluating train: L1 0.13253239244222642 PSNR 14.64818229675293
+ATE tensor(0.0989, dtype=torch.float64)
+
+[ITER 17500] Evaluating test: L1 0.30717524513602257 PSNR 10.270567893981934
+
+[ITER 17500] Evaluating train: L1 0.13086558282375335 PSNR 14.781171226501465
+increase sh degree
+ATE tensor(0.0990, dtype=torch.float64)
+
+[ITER 18000] Evaluating test: L1 0.2920643091201782 PSNR 10.864816665649414
+
+[ITER 18000] Evaluating train: L1 0.1252851277589798 PSNR 15.04280300140381
+ATE tensor(0.0991, dtype=torch.float64)
+
+[ITER 18500] Evaluating test: L1 0.276255801320076 PSNR 11.198520421981812
+
+[ITER 18500] Evaluating train: L1 0.1227482333779335 PSNR 15.13843231201172
+increase sh degree
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 19000] Evaluating test: L1 0.2544047348201275 PSNR 11.461230278015137
+
+[ITER 19000] Evaluating train: L1 0.12208973467350007 PSNR 15.182722473144532
+ATE tensor(0.0995, dtype=torch.float64)
+
+[ITER 19500] Evaluating test: L1 0.2461419440805912 PSNR 11.738336086273193
+
+[ITER 19500] Evaluating train: L1 0.12106594443321228 PSNR 15.261693572998048
+increase sh degree
+ATE tensor(0.0995, dtype=torch.float64)
+
+[ITER 20000] Evaluating test: L1 0.24773555994033813 PSNR 11.799980163574219
+
+[ITER 20000] Evaluating train: L1 0.11721898317337037 PSNR 15.545271873474121
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 20500] Evaluating test: L1 0.24217578023672104 PSNR 11.956937313079834
+
+[ITER 20500] Evaluating train: L1 0.1171230748295784 PSNR 15.531264305114746
+increase sh degree
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 21000] Evaluating test: L1 0.22403941303491592 PSNR 12.382245540618896
+
+[ITER 21000] Evaluating train: L1 0.11427625268697739 PSNR 15.728313064575197
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 21500] Evaluating test: L1 0.23434928804636002 PSNR 11.988941192626953
+
+[ITER 21500] Evaluating train: L1 0.11323128044605256 PSNR 15.862286567687988
+increase sh degree
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 22000] Evaluating test: L1 0.22312693670392036 PSNR 12.512775421142578
+
+[ITER 22000] Evaluating train: L1 0.11297549158334733 PSNR 15.819298553466798
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 22500] Evaluating test: L1 0.2262178175151348 PSNR 12.478846073150635
+
+[ITER 22500] Evaluating train: L1 0.11225876286625863 PSNR 15.891942977905273
+increase sh degree
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 23000] Evaluating test: L1 0.2252078652381897 PSNR 12.529498100280762
+
+[ITER 23000] Evaluating train: L1 0.11258649751543999 PSNR 15.889281845092775
+ATE tensor(0.0994, dtype=torch.float64)
+
+[ITER 23500] Evaluating test: L1 0.22924618795514107 PSNR 12.464207172393799
+
+[ITER 23500] Evaluating train: L1 0.1112114354968071 PSNR 15.99307918548584

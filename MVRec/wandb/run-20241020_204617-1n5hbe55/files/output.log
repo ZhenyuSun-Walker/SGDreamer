@@ -1,0 +1,125 @@
+Optimizing
+Output folder: ./output/livingroom
+Reading camera 20/20
+[1, 11]
+655360 points
+Loading Training Cameras
+Loading Test Cameras
+Loading GT Cameras
+Number of points at initialisation :  655360
+viewpoint_stack: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+viewpoint_stack_gt: [Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera(), Camera()]
+Training progress:   2%|▉                                                    | 500/30000 [01:19<1:55:08,  4.27it/s, Loss=0.0870993]/home/sunzhenyu/Projects/MVGS/train.py:560: MatplotlibDeprecationWarning: The tostring_rgb function was deprecated in Matplotlib 3.8 and will be removed in 3.10. Use buffer_rgba instead.
+ATE tensor(0.0566, dtype=torch.float64)
+  image_from_plot = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:135: UserWarning: Using 'weights' as positional parameter(s) is deprecated since 0.13 and may be removed in the future. Please use keyword parameter(s) instead.
+  warnings.warn(
+/home/sunzhenyu/anaconda3/envs/mvgs/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=AlexNet_Weights.IMAGENET1K_V1`. You can also use `weights=AlexNet_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+
+[ITER 500] Evaluating test: L1 0.0456487201154232 PSNR 21.5754976272583
+
+[ITER 500] Evaluating train: L1 0.05500827133655548 PSNR 20.18374176025391
+
+[ITER 500] Saving Gaussians
+Training progress:   5%|██▌                                                 | 1500/30000 [06:27<2:29:04,  3.19it/s, Loss=0.0231729]
+Saved rendered image for camera 0 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 1000 to rendered_images/livingroom/iteration_1000/rendered_image_19.png
+increase sh degree
+ATE tensor(0.0710, dtype=torch.float64)
+
+[ITER 1000] Evaluating test: L1 0.040181401651352644 PSNR 23.907559394836426
+
+[ITER 1000] Evaluating train: L1 0.029641535319387916 PSNR 27.535279083251954
+
+[ITER 1000] Saving Gaussians
+ATE tensor(0.0767, dtype=torch.float64)
+
+[ITER 1500] Evaluating test: L1 0.03054008400067687 PSNR 25.65398120880127
+
+[ITER 1500] Evaluating train: L1 0.023603913187980653 PSNR 28.743268203735354
+
+[ITER 1500] Saving Gaussians
+Saved rendered image for camera 0 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 2000 to rendered_images/livingroom/iteration_2000/rendered_image_19.png
+increase sh degree
+ATE tensor(0.0966, dtype=torch.float64)
+
+[ITER 2000] Evaluating test: L1 0.033112859819084406 PSNR 25.13011360168457
+
+[ITER 2000] Evaluating train: L1 0.028593645431101322 PSNR 27.880409240722656
+
+[ITER 2000] Saving Gaussians
+ATE tensor(0.1036, dtype=torch.float64)
+
+[ITER 2500] Evaluating test: L1 0.021138995885849 PSNR 28.08078956604004
+
+[ITER 2500] Evaluating train: L1 0.02163138445466757 PSNR 29.93740692138672
+
+[ITER 2500] Saving Gaussians
+Saved rendered image for camera 0 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_0.png
+Saved rendered image for camera 1 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_1.png
+Saved rendered image for camera 2 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_2.png
+Saved rendered image for camera 3 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_3.png
+Saved rendered image for camera 4 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_4.png
+Saved rendered image for camera 5 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_5.png
+Saved rendered image for camera 6 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_6.png
+Saved rendered image for camera 7 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_7.png
+Saved rendered image for camera 8 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_8.png
+Saved rendered image for camera 9 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_9.png
+Saved rendered image for camera 10 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_10.png
+Saved rendered image for camera 11 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_11.png
+Saved rendered image for camera 12 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_12.png
+Saved rendered image for camera 13 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_13.png
+Saved rendered image for camera 14 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_14.png
+Saved rendered image for camera 15 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_15.png
+Saved rendered image for camera 16 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_16.png
+Saved rendered image for camera 17 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_17.png
+Saved rendered image for camera 18 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_18.png
+Saved rendered image for camera 19 at iteration 3000 to rendered_images/livingroom/iteration_3000/rendered_image_19.png
+increase sh degree
+ATE tensor(0.1098, dtype=torch.float64)
+
+[ITER 3000] Evaluating test: L1 0.02130839042365551 PSNR 27.600522994995117
+
+[ITER 3000] Evaluating train: L1 0.022246215492486954 PSNR 30.411122512817386
+
+[ITER 3000] Saving Gaussians
+
+Training complete.

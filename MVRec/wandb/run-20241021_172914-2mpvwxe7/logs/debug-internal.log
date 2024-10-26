@@ -1,0 +1,20 @@
+{"time":"2024-10-21T17:29:14.102962084+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-21T17:29:14.102976772+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241021_172914-2mpvwxe7/logs/debug-core.log"}
+{"time":"2024-10-21T17:29:14.104735259+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-21T17:29:14.118501212+08:00","level":"INFO","msg":"created new stream","id":"2mpvwxe7"}
+{"time":"2024-10-21T17:29:14.118549887+08:00","level":"INFO","msg":"stream: started","id":"2mpvwxe7"}
+{"time":"2024-10-21T17:29:14.11857887+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:29:14.118568044+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:29:14.118608427+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:29:14.837786788+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-21T17:29:14.839247862+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-21T17:29:24.95930874+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-21T17:30:30.694309531+08:00","level":"INFO","msg":"stream: closing","id":"2mpvwxe7"}
+{"time":"2024-10-21T17:30:30.694388885+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-21T17:30:30.698204919+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-21T17:30:35.697674385+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-21T17:30:37.293107086+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-21T17:30:38.273663917+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:30:38.273773928+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:30:38.273738914+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2mpvwxe7"}}
+{"time":"2024-10-21T17:30:38.273962719+08:00","level":"INFO","msg":"stream: closed","id":"2mpvwxe7"}

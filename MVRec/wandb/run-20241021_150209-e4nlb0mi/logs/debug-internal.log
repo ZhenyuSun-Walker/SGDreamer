@@ -1,0 +1,20 @@
+{"time":"2024-10-21T15:02:09.491817789+08:00","level":"INFO","msg":"using version","core version":"0.18.3"}
+{"time":"2024-10-21T15:02:09.491828553+08:00","level":"INFO","msg":"created symlink","path":"/home/sunzhenyu/Projects/MVGS/wandb/run-20241021_150209-e4nlb0mi/logs/debug-core.log"}
+{"time":"2024-10-21T15:02:09.493361442+08:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-10-21T15:02:09.503993786+08:00","level":"INFO","msg":"created new stream","id":"e4nlb0mi"}
+{"time":"2024-10-21T15:02:09.504048829+08:00","level":"INFO","msg":"stream: started","id":"e4nlb0mi"}
+{"time":"2024-10-21T15:02:09.504091712+08:00","level":"INFO","msg":"handler: started","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:02:09.504079065+08:00","level":"INFO","msg":"sender: started","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:02:09.504068537+08:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:02:10.217252345+08:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-10-21T15:02:10.218573035+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-10-21T15:02:20.334911187+08:00","level":"INFO","msg":"tensorboard: no root directory after 10 seconds, using working directory"}
+{"time":"2024-10-21T15:03:18.128212622+08:00","level":"INFO","msg":"stream: closing","id":"e4nlb0mi"}
+{"time":"2024-10-21T15:03:18.128276034+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-10-21T15:03:18.132322114+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-10-21T15:03:23.131303359+08:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-10-21T15:03:26.766476788+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-10-21T15:03:27.780319692+08:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:03:27.780429291+08:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:03:27.780401059+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"e4nlb0mi"}}
+{"time":"2024-10-21T15:03:27.780626761+08:00","level":"INFO","msg":"stream: closed","id":"e4nlb0mi"}

@@ -1,0 +1,10 @@
+Optimizing
+Output folder: ./output/diningroom
+Traceback (most recent call last):
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 804, in <module>
+    training(lp.extract(args), op.extract(args), pp.extract(args), args.test_iterations, args.save_iterations, args.checkpoint_iterations, args.start_checkpoint, args.debug_from,args)
+  File "/home/sunzhenyu/Projects/MVGS/train.py", line 345, in training
+    scene = Scene(dataset, gaussians)
+  File "/home/sunzhenyu/Projects/MVGS/scene/__init__.py", line 146, in __init__
+    assert False, "Could not recognize scene type!"
+AssertionError: Could not recognize scene type!
