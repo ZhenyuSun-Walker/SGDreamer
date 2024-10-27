@@ -727,7 +727,7 @@ if __name__ == "__main__":
     # parser.add_argument("--test_iterations", nargs="+", type=int, default=[1, 500, 1_000, 1_500, 2_000, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000])
     parser.add_argument("--test_iterations", nargs="+", type=int, default=[500, 1_000, 1_500, 2_000, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000, 5_500, 6_000])
     # parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 500, 1_500, 2_000, 2_500, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[1_500, 3_000, 3_500, 4_000, 4_500, 5_000, 5_500, 6_000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[4_000])
     #parser.add_argument("--res", nargs="+", type=int, default=None)
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument('-o','--online', action='store_true', default=False)
@@ -742,10 +742,12 @@ if __name__ == "__main__":
     args = parser.parse_args(sys.argv[1:])
     args.save_iterations.append(args.iterations)
     
+    run = wandb.init(project="SGDreamer",mode="online" if args.online else "disabled", name=args.name, sync_tensorboard=True)
+
     print("Optimizing " + args.model_path)
 
     # Initialize system state (RNG)
-    safe_state(args.quiet)
+    # safe_state(args.quiet)
 
     torch.autograd.set_detect_anomaly(args.detect_anomaly)
     training(lp.extract(args), op.extract(args), pp.extract(args), args.test_iterations, args.save_iterations, args.checkpoint_iterations, args.start_checkpoint, args.debug_from,args)

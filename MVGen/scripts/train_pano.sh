@@ -10,7 +10,7 @@ export PYTHONPATH=$PROJECT_DIR:$PYTHONPATH
 n_nodes=1
 n_gpus_per_node=4 # number of gpus
 torch_num_workers=4
-batch_size=1 # make the batch size as large as possible
+batch_size=4 
 exp_name="train_pano=$(($n_gpus_per_node * $n_nodes * $batch_size))"
 
 python -u ./train.py configs/pano_generation.yaml \

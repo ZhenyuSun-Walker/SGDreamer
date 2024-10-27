@@ -398,41 +398,27 @@ class GaussianModel:
         prune_filter = torch.cat((selected_pts_mask, torch.zeros(N * selected_pts_mask.sum(), device="cuda", dtype=bool)))
         self.prune_points(prune_filter)
 
-    # def densify_and_clone(self, grads, grad_threshold, scene_extent, box3ds):
+    def densify_and_clone(self, grads, grad_threshold, scene_extent, box3ds):
 
-    #     # Extract points that satisfy the gradient condition
-    #     mask = torch.zeros_like(self.get_xyz[:,0])
-    #     for box3d in box3ds:
-    #         x_min_3d, y_min_3d, z_min_3d, x_max_3d, y_max_3d, z_max_3d = box3d
-    #         mask_x = torch.logical_and(self.get_xyz[:, 0] > x_min_3d, self.get_xyz[:, 0] < x_max_3d)
-    #         mask_y = torch.logical_and(self.get_xyz[:, 1] > y_min_3d, self.get_xyz[:, 1] < y_max_3d)
-    #         mask_z = torch.logical_and(self.get_xyz[:, 2] > z_min_3d, self.get_xyz[:, 2] < z_max_3d)
-    #         mask_xyz = torch.logical_and(mask_x, mask_y)
-    #         mask_xyz = torch.logical_and(mask_xyz, mask_z)
-
-    #         mask = torch.logical_or(mask, mask_xyz)
-
-
-
-    #     selected_pts_mask = torch.where(torch.norm(grads, dim=-1) >= grad_threshold, True, False)
-    #     selected_pts_mask = torch.logical_and(selected_pts_mask,
-    #                                           torch.max(self.get_scaling, dim=1).values <= self.percent_dense*scene_extent)
-
-    #     selected_pts_mask = torch.logical_or(selected_pts_mask, mask)
-    #     new_xyz = self._xyz[selected_pts_mask]
-    #     new_features_dc = self._features_dc[selected_pts_mask]
-    #     new_features_rest = self._features_rest[selected_pts_mask]
-    #     new_opacities = self._opacity[selected_pts_mask]
-    #     new_scaling = self._scaling[selected_pts_mask]
-    #     new_rotation = self._rotation[selected_pts_mask]
-
-    #     self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation)
-    def densify_and_clone(self, grads, grad_threshold, scene_extent):
         # Extract points that satisfy the gradient condition
+        mask = torch.zeros_like(self.get_xyz[:,0])
+        for box3d in box3ds:
+            x_min_3d, y_min_3d, z_min_3d, x_max_3d, y_max_3d, z_max_3d = box3d
+            mask_x = torch.logical_and(self.get_xyz[:, 0] > x_min_3d, self.get_xyz[:, 0] < x_max_3d)
+            mask_y = torch.logical_and(self.get_xyz[:, 1] > y_min_3d, self.get_xyz[:, 1] < y_max_3d)
+            mask_z = torch.logical_and(self.get_xyz[:, 2] > z_min_3d, self.get_xyz[:, 2] < z_max_3d)
+            mask_xyz = torch.logical_and(mask_x, mask_y)
+            mask_xyz = torch.logical_and(mask_xyz, mask_z)
+
+            mask = torch.logical_or(mask, mask_xyz)
+
+
+
         selected_pts_mask = torch.where(torch.norm(grads, dim=-1) >= grad_threshold, True, False)
         selected_pts_mask = torch.logical_and(selected_pts_mask,
                                               torch.max(self.get_scaling, dim=1).values <= self.percent_dense*scene_extent)
-        
+
+        selected_pts_mask = torch.logical_or(selected_pts_mask, mask)
         new_xyz = self._xyz[selected_pts_mask]
         new_features_dc = self._features_dc[selected_pts_mask]
         new_features_rest = self._features_rest[selected_pts_mask]
@@ -441,6 +427,21 @@ class GaussianModel:
         new_rotation = self._rotation[selected_pts_mask]
 
         self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation)
+    
+    # def densify_and_clone(self, grads, grad_threshold, scene_extent):
+    #     # Extract points that satisfy the gradient condition
+    #     selected_pts_mask = torch.where(torch.norm(grads, dim=-1) >= grad_threshold, True, False)
+    #     selected_pts_mask = torch.logical_and(selected_pts_mask,
+    #                                           torch.max(self.get_scaling, dim=1).values <= self.percent_dense*scene_extent)
+        
+    #     new_xyz = self._xyz[selected_pts_mask]
+    #     new_features_dc = self._features_dc[selected_pts_mask]
+    #     new_features_rest = self._features_rest[selected_pts_mask]
+    #     new_opacities = self._opacity[selected_pts_mask]
+    #     new_scaling = self._scaling[selected_pts_mask]
+    #     new_rotation = self._rotation[selected_pts_mask]
+
+    #     self.densification_postfix(new_xyz, new_features_dc, new_features_rest, new_opacities, new_scaling, new_rotation)
 
     def gather_rays(self, rays, region):
         top = rays[region[1], region[0]:region[2]]
@@ -479,89 +480,73 @@ class GaussianModel:
         return intersection_point
 
 
-    # def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size, cams, boxes):
-    #     grads = self.xyz_gradient_accum / self.denom
-    #     grads[grads.isnan()] = 0.0
-
-    #     box3ds = []
-    #     if cams is not None:
-    #         for i, cam_0 in enumerate(cams):
-    #             for j, cam_1 in enumerate(cams[i+1:]):
-    #                 ray0_o = cam_0.rayo
-    #                 ray0_d = cam_0.rayd
-    #                 box0 = boxes[i]
-
-    #                 ray0_o_topleft = ray0_o[0,:, box0[0], box0[1]]
-    #                 ray0_d_topleft = ray0_d[0,:, box0[0], box0[1]]
-
-    #                 ray0_o_bottomright = ray0_o[0,:, box0[2], box0[3]]
-    #                 ray0_d_bottomright = ray0_d[0,:, box0[2], box0[3]]
-
-    #                 ray0_o_bottomleft = ray0_o[0,:, box0[2], box0[1]]
-    #                 ray0_d_bottomleft = ray0_d[0,:, box0[2], box0[1]]
-
-    #                 ray0_o_topright = ray0_o[0, :, box0[0], box0[3]]
-    #                 ray0_d_topright = ray0_d[0, :, box0[0], box0[3]]
-
-    #                 ray1_o = cam_1.rayo
-    #                 ray1_d = cam_1.rayd
-    #                 box1 = boxes[j]
-
-    #                 ray1_o_topleft = ray1_o[0, :, box1[0], box1[1]]
-    #                 ray1_d_topleft = ray1_d[0, :, box1[0], box1[1]]
-
-    #                 ray1_o_bottomright = ray1_o[0, :, box1[2], box1[3]]
-    #                 ray1_d_bottomright = ray1_d[0, :, box1[2], box1[3]]
-
-    #                 ray1_o_bottomleft = ray1_o[0, :, box1[2], box1[1]]
-    #                 ray1_d_bottomleft = ray1_d[0, :, box1[2], box1[1]]
-
-    #                 ray1_o_topright = ray1_o[0, :, box1[0], box1[3]]
-    #                 ray1_d_topright = ray1_d[0, :, box1[0], box1[3]]
-
-
-    #                 topleft_intersect = self.intersect_lines(ray0_o_topleft, ray0_d_topleft, ray1_o_topleft, ray1_d_topleft)
-    #                 bottomright_intersect = self.intersect_lines(ray0_o_bottomright, ray0_d_bottomright, ray1_o_bottomright, ray1_d_bottomright)
-    #                 bottomleft_interset=self.intersect_lines(ray0_o_bottomleft, ray0_d_bottomleft, ray1_o_bottomleft, ray1_d_bottomleft)
-    #                 topright_intersect = self.intersect_lines(ray0_o_topright, ray0_d_topright, ray1_o_topright, ray1_d_topright)
-
-
-    #                 region3d = [topleft_intersect,bottomright_intersect, bottomleft_interset, topright_intersect]
-    #                 if len(region3d)==0 or None in region3d:
-    #                     continue
-    #                 region3d = torch.vstack(region3d)
-    #                 x_min_3d = torch.min(region3d[:, 0])
-    #                 y_min_3d = torch.min(region3d[:, 1])
-    #                 z_min_3d = torch.min(region3d[:, 2])
-
-    #                 x_max_3d = torch.max(region3d[:, 0])
-    #                 y_max_3d = torch.max(region3d[:, 1])
-    #                 z_max_3d = torch.max(region3d[:, 2])
-
-
-
-    #                 box3d = [x_min_3d, y_min_3d, z_min_3d, x_max_3d, y_max_3d, z_max_3d]
-    #                 box3ds.append(box3d)
-
-
-
-    #     self.densify_and_clone(grads, max_grad, extent, box3ds)
-    #     self.densify_and_split(grads, max_grad, extent)
-
-    #     prune_mask = (self.get_opacity < min_opacity).squeeze()
-    #     if max_screen_size:
-    #         big_points_vs = self.max_radii2D > max_screen_size
-    #         big_points_ws = self.get_scaling.max(dim=1).values > 0.1 * extent
-    #         prune_mask = torch.logical_or(torch.logical_or(prune_mask, big_points_vs), big_points_ws)
-    #     self.prune_points(prune_mask)
-
-    #     torch.cuda.empty_cache()
-
-    def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size):
+    def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size, cams, boxes):
         grads = self.xyz_gradient_accum / self.denom
         grads[grads.isnan()] = 0.0
 
-        self.densify_and_clone(grads, max_grad, extent)
+        box3ds = []
+        if cams is not None:
+            for i, cam_0 in enumerate(cams):
+                for j, cam_1 in enumerate(cams[i+1:]):
+                    ray0_o = cam_0.rayo
+                    ray0_d = cam_0.rayd
+                    box0 = boxes[i]
+
+                    ray0_o_topleft = ray0_o[0,:, box0[0], box0[1]]
+                    ray0_d_topleft = ray0_d[0,:, box0[0], box0[1]]
+
+                    ray0_o_bottomright = ray0_o[0,:, box0[2], box0[3]]
+                    ray0_d_bottomright = ray0_d[0,:, box0[2], box0[3]]
+
+                    ray0_o_bottomleft = ray0_o[0,:, box0[2], box0[1]]
+                    ray0_d_bottomleft = ray0_d[0,:, box0[2], box0[1]]
+
+                    ray0_o_topright = ray0_o[0, :, box0[0], box0[3]]
+                    ray0_d_topright = ray0_d[0, :, box0[0], box0[3]]
+
+                    ray1_o = cam_1.rayo
+                    ray1_d = cam_1.rayd
+                    box1 = boxes[j]
+
+                    ray1_o_topleft = ray1_o[0, :, box1[0], box1[1]]
+                    ray1_d_topleft = ray1_d[0, :, box1[0], box1[1]]
+
+                    ray1_o_bottomright = ray1_o[0, :, box1[2], box1[3]]
+                    ray1_d_bottomright = ray1_d[0, :, box1[2], box1[3]]
+
+                    ray1_o_bottomleft = ray1_o[0, :, box1[2], box1[1]]
+                    ray1_d_bottomleft = ray1_d[0, :, box1[2], box1[1]]
+
+                    ray1_o_topright = ray1_o[0, :, box1[0], box1[3]]
+                    ray1_d_topright = ray1_d[0, :, box1[0], box1[3]]
+
+
+                    topleft_intersect = self.intersect_lines(ray0_o_topleft, ray0_d_topleft, ray1_o_topleft, ray1_d_topleft)
+                    bottomright_intersect = self.intersect_lines(ray0_o_bottomright, ray0_d_bottomright, ray1_o_bottomright, ray1_d_bottomright)
+                    bottomleft_interset=self.intersect_lines(ray0_o_bottomleft, ray0_d_bottomleft, ray1_o_bottomleft, ray1_d_bottomleft)
+                    topright_intersect = self.intersect_lines(ray0_o_topright, ray0_d_topright, ray1_o_topright, ray1_d_topright)
+
+
+                    region3d = [topleft_intersect,bottomright_intersect, bottomleft_interset, topright_intersect]
+                    if len(region3d)==0 or None in region3d:
+                        continue
+                    region3d = torch.vstack(region3d)
+                    x_min_3d = torch.min(region3d[:, 0])
+                    y_min_3d = torch.min(region3d[:, 1])
+                    z_min_3d = torch.min(region3d[:, 2])
+
+                    x_max_3d = torch.max(region3d[:, 0])
+                    y_max_3d = torch.max(region3d[:, 1])
+                    z_max_3d = torch.max(region3d[:, 2])
+
+
+
+                    box3d = [x_min_3d, y_min_3d, z_min_3d, x_max_3d, y_max_3d, z_max_3d]
+                    box3ds.append(box3d)
+
+
+
+        self.densify_and_clone(grads, max_grad, extent, box3ds)
         self.densify_and_split(grads, max_grad, extent)
 
         prune_mask = (self.get_opacity < min_opacity).squeeze()
@@ -572,6 +557,22 @@ class GaussianModel:
         self.prune_points(prune_mask)
 
         torch.cuda.empty_cache()
+
+    # def densify_and_prune(self, max_grad, min_opacity, extent, max_screen_size):
+    #     grads = self.xyz_gradient_accum / self.denom
+    #     grads[grads.isnan()] = 0.0
+
+    #     self.densify_and_clone(grads, max_grad, extent)
+    #     self.densify_and_split(grads, max_grad, extent)
+
+    #     prune_mask = (self.get_opacity < min_opacity).squeeze()
+    #     if max_screen_size:
+    #         big_points_vs = self.max_radii2D > max_screen_size
+    #         big_points_ws = self.get_scaling.max(dim=1).values > 0.1 * extent
+    #         prune_mask = torch.logical_or(torch.logical_or(prune_mask, big_points_vs), big_points_ws)
+    #     self.prune_points(prune_mask)
+
+    #     torch.cuda.empty_cache()
 
     def add_densification_stats(self, viewspace_point_tensor, update_filter):
         self.xyz_gradient_accum[update_filter] += torch.norm(viewspace_point_tensor.grad[update_filter,:2], dim=-1, keepdim=True)

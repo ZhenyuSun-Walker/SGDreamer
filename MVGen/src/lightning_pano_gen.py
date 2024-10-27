@@ -3,7 +3,7 @@ from diffusers import AutoencoderKL, DDIMScheduler, UNet2DConditionModel
 import torch
 import os
 from PIL import Image
-from transformers import CLIPTextModel, CLIPTokenizer
+from transformers import CLIPTextModel, CLIPTokenizer, CLIPProcessor, CLIPModel
 import numpy as np
 from torch.optim.lr_scheduler import CosineAnnealingLR
 from .models.pano.MVGenModel import MultiViewBaseModel
@@ -11,35 +11,39 @@ from torchvision import models
 import torch.nn.functional as F
 from einops import rearrange
 
-class PerceptualLoss(torch.nn.Module):
-    def __init__(self, feature_layers=[0, 5, 10, 19, 28], use_normalization=True, device=None):
-        super(PerceptualLoss, self).__init__()
-        self.feature_layers = feature_layers
-        self.vgg = models.vgg19(pretrained=True).features
-        self.use_normalization = use_normalization
-        if use_normalization:
-            self.mean = torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1).to(device)
-            self.std = torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1).to(device)
+# # Load VGG model
+# def load_vgg_model(device):
+#     vgg = models.vgg16(pretrained=True).features.eval().to(device)
+#     for param in vgg.parameters():
+#         param.requires_grad = False
+#     return vgg
 
-    def forward(self, img1, img2):
-        if self.use_normalization:
-            img1 = (img1 - self.mean) / self.std
-            img2 = (img2 - self.mean) / self.std
-        features1 = self.get_features(img1)
-        features2 = self.get_features(img2)
-        loss = 0
-        for f1, f2 in zip(features1, features2):
-            loss += F.l1_loss(f1, f2)
-        return loss
+# # Set GPU
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# torch.cuda.set_device(0)
 
-    def get_features(self, x):
-        features = []
-        for i, layer in enumerate(self.vgg):
-            x = layer(x)
-            if i in self.feature_layers:
-                features.append(x)
-        return features
+# # Load CLIP model and processor
+# clip_model = CLIPModel.from_pretrained("openai/clip-vit-large-patch14").to(device)
+# clip_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14")
 
+# def encode_text(text, tokenizer, device):
+#     text_inputs = tokenizer(text, return_tensors="pt", padding=True, truncation=True).to(device)
+#     return text_inputs
+
+# def perceptual_loss(generated, target, vgg):
+#     generated = generated.reshape(1 * 4, 3, 64, 64)
+#     target = target.reshape(1 * 4, 3, 64, 64)
+
+#     gen_features = vgg(generated)
+#     target_features = vgg(target)
+#     return F.mse_loss(gen_features, target_features)
+
+# def clip_score_loss(generated, prompts, clip_model):
+#     generated = generated.reshape(1 * 4, 3, 64, 64).to(next(clip_model.parameters()).device)  # Ensure on same device
+#     generated_embeds = clip_model.get_image_features(generated)
+#     text_embeds = [encode_text(prompt, clip_model.tokenizer, generated.device)[0] for prompt in prompts]
+#     text_embeds = torch.stack(text_embeds).to(generated.device)
+#     return -torch.mean(generated_embeds @ text_embeds.T)
 
 class PanoGenerator(pl.LightningModule):
     def __init__(self, config):
@@ -62,7 +66,7 @@ class PanoGenerator(pl.LightningModule):
         self.trainable_params = self.mv_base_model.trainable_parameters
         
         self.save_hyperparameters()
-       
+
     def load_model(self, model_id):
         vae = AutoencoderKL.from_pretrained(
             model_id, subfolder="vae")
@@ -78,10 +82,10 @@ class PanoGenerator(pl.LightningModule):
         text_inputs = self.tokenizer(
             text, padding="max_length", max_length=self.tokenizer.model_max_length,
             truncation=True, return_tensors="pt"
-        )
+        ).to(device)  # Ensure on same device
         text_input_ids = text_inputs.input_ids
         if hasattr(self.text_encoder.config, "use_attention_mask") and self.text_encoder.config.use_attention_mask:
-            attention_mask = text_inputs.attention_mask.cuda()
+            attention_mask = text_inputs.attention_mask.to(device)  # Ensure on same device
         else:
             attention_mask = None
         prompt_embeds = self.text_encoder(
@@ -134,74 +138,76 @@ class PanoGenerator(pl.LightningModule):
         }
         return {'optimizer': optimizer, 'lr_scheduler': scheduler}
 
+    def training_step(self, batch):      
+        meta = {
+            'K': batch['K'],
+            'R': batch['R']
+        }
 
-    # def training_step(self, batch, batch_idx):      
+        device = batch['images'].device
+        prompt_embds = []
+        for prompt in batch['prompt']:
+            prompt_embds.append(self.encode_text(
+                prompt, device)[0])
+        latents = self.encode_image(
+            batch['images'], self.vae)
+        t = torch.randint(0, self.scheduler.num_train_timesteps,
+                        (latents.shape[0],), device=latents.device).long()
+        prompt_embds = torch.stack(prompt_embds, dim=1)
+
+        noise = torch.randn_like(latents)
+        noise_z = self.scheduler.add_noise(latents, noise, t)
+        t = t[:, None].repeat(1, latents.shape[1])
+        denoise = self.mv_base_model(
+            noise_z, t, prompt_embds, meta)
+        target = noise       
+
+        # eps mode
+        loss = F.mse_loss(denoise, target)
+
+        self.log('train_loss', loss)
+        return loss
+
+    # def training_step(self, batch):
     #     meta = {
     #         'K': batch['K'],
     #         'R': batch['R']
     #     }
 
-    #     device = batch['images'].device
+    #     device = batch['images'].device  # Get device from batch images
     #     prompt_embds = []
     #     for prompt in batch['prompt']:
     #         prompt_embds.append(self.encode_text(
     #             prompt, device)[0])
     #     latents = self.encode_image(
-    #         batch['images'], self.vae)
-    #     t = torch.randint(0, self.scheduler.num_train_timesteps,
-    #                     (latents.shape[0],), device=latents.device).long()
-    #     prompt_embds = torch.stack(prompt_embds, dim=1)
+    #         batch['images'], self.vae)  # Ensure latents on same device
+    #     t = torch.randint(0, self.scheduler.num_train_timesteps, 
+    #                       (latents.shape[0],), device=latents.device).long()
+    #     prompt_embds = torch.stack(prompt_embds, dim=1) # Ensure prompt_embds on same device
 
-    #     noise = torch.randn_like(latents)
+    #     noise = torch.randn_like(latents).to(device)  # Ensure noise on same device
     #     noise_z = self.scheduler.add_noise(latents, noise, t)
     #     t = t[:, None].repeat(1, latents.shape[1])
-    #     denoise = self.mv_base_model(
-    #         noise_z, t, prompt_embds, meta)
-    #     target = noise       
+    #     denoise = self.mv_base_model(noise_z, t, prompt_embds, meta)
+        
+    #     # print(f"denoise shape: {denoise.shape}")
+    #     # target = noise       
+    #     # print(f"target shape: {target.shape}")
 
-    #     # eps mode
-    #     loss = torch.nn.functional.mse_loss(denoise, target)
-    #     self.log('train_loss', loss)
-    #     return loss
+    #     # vgg = load_vgg_model(device)  # Ensure VGG model on same device
 
-    def training_step(self, batch):
-        meta = {'K': batch['K'], 'R': batch['R']}
-        device = batch['images'].device
-        images = batch['images']
-        images = rearrange(images, 'bs m h w c -> bs m c h w')
-        mask_latnets, masked_image_latents = self.prepare_mask_image(images)
-        prompt_embds = []
-        for prompt in batch['prompt']:
-            prompt_embds.append(self.encode_text(prompt, device)[0])
-        m = images.shape[1]
-        images = rearrange(images, 'bs m c h w -> (bs m) c h w')
-        latents = self.encode_image(images, self.vae)
-        latents = rearrange(latents, '(bs m) c h w -> bs m c h w', m=m)
-        t = torch.randint(0, self.scheduler.num_train_timesteps, (latents.shape[0],), device=latents.device).long()
-        prompt_embds = torch.stack(prompt_embds, dim=1)
-        noise = torch.randn_like(latents)
-        noise_z = self.scheduler.add_noise(latents, noise, t)
-        t = t[:, None].repeat(1, latents.shape[1])
-        latents_input = torch.cat([noise_z, mask_latnets, masked_image_latents], dim=2)
-        denoise = self.mv_base_model(latents_input, t, prompt_embds, meta)
-        target = noise  # eps mode
+    #     # # Combine losses
+    #     mse_loss = F.mse_loss(denoise, target)
+    #     # denoise = denoise[:, :3, :, :, :]
+    #     # target = target[:, :3, :, :, :]
+    #     # perceptual = perceptual_loss(denoise, target, vgg)
+    #     # clip_loss = clip_score_loss(denoise, batch['prompt'], clip_model)
 
-        # Calculate MSE loss
-        mse_loss = F.mse_loss(denoise, target)
+    #     # Define weights for losses
+    #     # total_loss = mse_loss + 0.5 * perceptual + 0.2 * clip_loss
 
-        # Decode latent variables to get reconstructed images
-        recon_images = self.decode_latent(denoise, self.vae)
-        original_images = self.decode_latent(latents, self.vae)
-
-        # Calculate perceptual loss
-        perceptual_loss_fn = PerceptualLoss().to(self.device)
-        perceptual_loss = perceptual_loss_fn(recon_images, original_images)
-
-        # Combine MSE loss and perceptual loss
-        loss = 0.6*mse_loss + 0.4*perceptual_loss
-        self.log('train_loss', loss)
-        return loss
-    
+    #     self.log('train_loss', mse_loss)
+    #     return mse_loss
 
     def gen_cls_free_guide_pair(self, latents, timestep, prompt_embd, batch):
         latents = torch.cat([latents]*2)

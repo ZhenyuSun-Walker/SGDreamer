@@ -53,6 +53,7 @@ class MultiViewBaseModel(nn.Module):
         hidden_states = self.unet.conv_in(
             hidden_states)  # bs*m, 320, 64, 64
 
+
         # unet
         # a. downsample
         down_block_res_samples = (hidden_states,)
