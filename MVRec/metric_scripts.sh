@@ -4,7 +4,7 @@ total_psnr=0
 total_lpips=0
 total_ssim=0
 scene_count=0
-category="ablation/outdoor_wo_densi"
+category="ablation/wo_rm_cam_opt/outdoor_wo_rm_cam_opt"
 
 # Loop through each scene directory in the indoor folder
 for scene_dir in metrics/GPT_dataset/$category/*; do

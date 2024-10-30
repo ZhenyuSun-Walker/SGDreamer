@@ -431,11 +431,12 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
             bg = torch.rand((3), device="cuda") if opt.random_background else background
 
-            if iteration > args.start_cam_opt:
-                render_pkg = render(viewpoint_cam, gaussians, pipe, background, pre_transf=transf, fov=focal_params)  # with pose gradients
-            else:
-                render_pkg = render_(viewpoint_cam, gaussians, pipe, bg)
-            
+            # if iteration > args.start_cam_opt:
+            #     render_pkg = render(viewpoint_cam, gaussians, pipe, background, pre_transf=transf, fov=focal_params)
+            # else:
+            #     render_pkg = render_(viewpoint_cam, gaussians, pipe, bg)
+            render_pkg = render_(viewpoint_cam, gaussians, pipe, bg)
+
             image, viewspace_point_tensor, visibility_filter, radii = render_pkg["render"], render_pkg["viewspace_points"], render_pkg["visibility_filter"], render_pkg["radii"]
 
             # Loss
@@ -453,10 +454,8 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
         total_loss.backward()
 
         if iteration > args.start_cam_opt:
-            cam_optim.step()
-            cam_optim.zero_grad()
-            focal_optim.step()
-            focal_optim.zero_grad()
+            cam_optim.step(); cam_optim.zero_grad();
+            focal_optim.step(); focal_optim.zero_grad();
 
         iter_end.record()
 
@@ -497,6 +496,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             if (iteration in [300,500,1000] or iteration%3000==1 and 1) and 0:
                 raise NotImplementedError("This is still trying to auto-detect the colmap_cams flag. If you get rid of this error, you need to fix that.")
             
+            # Pose logging
             our_poses=lift_to_poses(transf_params).inverse()[...,:3,-1].detach().cpu()
             gt_poses=lift_to_poses(transf_params_gt).inverse()[...,:3,-1].detach().cpu()
 
@@ -724,9 +724,7 @@ if __name__ == "__main__":
     parser.add_argument('--cam_lr', type=float, default=0)
     parser.add_argument('--debug_from', type=int, default=-1)
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
-    # parser.add_argument("--test_iterations", nargs="+", type=int, default=[1, 500, 1_000, 1_500, 2_000, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000])
-    parser.add_argument("--test_iterations", nargs="+", type=int, default=[500, 1_000, 1_500, 2_000, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000, 5_500, 6_000])
-    # parser.add_argument("--save_iterations", nargs="+", type=int, default=[1, 500, 1_500, 2_000, 2_500, 2_500, 3_000, 3_500, 4_000, 4_500, 5_000])
+    parser.add_argument("--test_iterations", nargs="+", type=int, default=[500, 1_000, 1_500, 2_000, 2_500, 3_000, 3_500, 4_000])
     parser.add_argument("--save_iterations", nargs="+", type=int, default=[4_000])
     #parser.add_argument("--res", nargs="+", type=int, default=None)
     parser.add_argument("--quiet", action="store_true")
@@ -735,7 +733,6 @@ if __name__ == "__main__":
     parser.add_argument('--no_anneal_cam_lr', action='store_true', default=False)
     parser.add_argument('--use_test', action='store_true', default=True)
     parser.add_argument('-n','--name', type=str, default="gauss_splat")
-    # parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[3000])
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[])
     parser.add_argument("--start_checkpoint", type=str, default = None)
     parser.add_argument("--render_checkpoint", type=str, default = None)

@@ -4,3 +4,4 @@ metrics
 rendered_images
 data
 video_save
+wandb

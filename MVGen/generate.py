@@ -8,6 +8,8 @@ import numpy as np
 import cv2
 from generate_video_tool.pano_video_generation import generate_video
 from PIL import Image
+import exiftool
+from exiftool import ExifToolHelper
 from datetime import datetime
 
 torch.manual_seed(0)
@@ -36,7 +38,7 @@ def parse_args():
     parser.add_argument('--deg', type=int, default=45, help='degree')
     parser.add_argument('--gen_video', action='store_true', help='generate video')
     parser.add_argument('--save_frames', action='store_true')
-    parser.add_argument('--prompt_folder', type=str, default='prompt/indoor', help='path to prompt folder')
+    parser.add_argument('--prompt_folder', type=str, default='../prompt/indoor', help='path to prompt folder')
  
     return parser.parse_args()
 
