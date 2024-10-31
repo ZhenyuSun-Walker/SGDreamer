@@ -35,11 +35,11 @@ def process_all_scenes(source_dir, target_numbers, mv_images_dir):
         if os.path.exists(scene_path):
                 # Construct the corresponding output folder in generate_mvimages
                 length = len(target_numbers)
-                scene_output_folder = os.path.join(mv_images_dir, f"{source_dir.split('/')[2]}",f"{scene_folder}_{length}", 'images')
+                scene_output_folder = os.path.join(mv_images_dir, f"{source_dir.split('/')[2]}",f"{scene_folder}", 'images')
                 filter_images_by_number(scene_path, target_numbers, scene_output_folder)
 
 # Example usage:
-target_image_numbers = [i for i in range(0, 719, 9)]  # Assuming 720 images, filtering every 36th image
-source_dir = './outputs/results--20241018-224153'  # Path to the source path directory
+target_image_numbers = [i for i in range(0, 359, 18)]  # Assuming 720 images, filtering every 36th image
+source_dir = './outputs/results--20241101-000523'  # Path to the source path directory
 mv_images_dir = '../generate_mvimages'  # Path to the generate_mvimages folder
 process_all_scenes(source_dir, target_image_numbers, mv_images_dir)

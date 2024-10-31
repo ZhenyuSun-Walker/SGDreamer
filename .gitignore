@@ -11,17 +11,14 @@ panorama
 MVSrec
 prompt
 <<<<<<< HEAD
-MVSrec/dataset
-MVSrec/output
-MVSrec/result
-MVSrec/mvsgs_pointcloud
-MVSrec/mvsgs_pointcloud_opt
-MVSrec/nerf_llff_data
 
-MVgen/outputs
-MVgen/weights
-Mvgen/stabilityai
-Mvgen/data
+MVGen/outputs
+MVGen/weights
+MVGen/stabilityai
+MVGen/data
+
+MVRec/wandb
+MVRec/Optical-Flow-Visulization-PyTorch
 
 flowmap/checkpoints
 flowmap/outputs

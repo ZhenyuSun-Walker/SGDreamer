@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the base directory containing the scenes
-SCENE_DIR="data/GPT_dataset/outdoor"
+SCENE_DIR="data/GPT_dataset_1024_old/outdoor"
 
 # Iterate over each subdirectory (scene) in the SCENE_DIR
 for scene in "$SCENE_DIR"/*; do

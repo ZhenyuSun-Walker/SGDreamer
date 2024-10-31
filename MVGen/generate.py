@@ -3,7 +3,6 @@ import torch
 import argparse
 import yaml
 from src.lightning_pano_gen import PanoGenerator
-from src.lightning_pano_outpaint import PanoOutpaintGenerator
 import numpy as np
 import cv2
 from generate_video_tool.pano_video_generation import generate_video
@@ -92,7 +91,7 @@ def main():
     config_file = 'configs/pano_generation.yaml'
     config = yaml.load(open(config_file, 'rb'), Loader=yaml.SafeLoader)
     model = PanoGenerator(config)
-    model.load_state_dict(torch.load('weights/pano/20241024/last.ckpt', map_location='cpu')['state_dict'], strict=True)
+    model.load_state_dict(torch.load('weights/pano/20241031/last.ckpt', map_location='cpu')['state_dict'], strict=True)
     model = model.cuda()
 
     resolution = config['dataset']['resolution']
