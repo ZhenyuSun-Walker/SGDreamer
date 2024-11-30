@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="800" src="assets/teaser.pdf".
+    <img width="800" src="./assets/teaser.pdf".
 </p>
 
 # SGDreamer: Scene Harmonic Gaussian-based Dreamer for Domain-Free Text-to-3D Generation with Peripheral 360-Degree Views
@@ -21,7 +21,7 @@
 
   ```
   git clone https://github.com/ZhenyuSun-Walker/SGDreamer.git
-  cd MVSGaussian
+  cd SGDreamer
   ```
 
 ### Create the conda environment and install the dependencies:
@@ -43,14 +43,31 @@ cd MVGen # make sure you are under the SGDreamer/MVGen
 python generate.py --gen_video --save_frames [Other options]
 python select_range.py --source ./outputs/$results --target ../generate_mvimages
 ```
-
 #### Other Options
 - `--fov` : Denote the horizontal field of camera view, 90 in degrees as default.
 - `--deg` : Specify the rotation angle around the vertical axis, 45 in degrees as default.
 - `--prompt_folder` : Path to the text file containing the prompts including different scenes.  
 
-Specifically, you neee to download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), and then put it under 
-```MVGen/weights/pano/last/```.
+Specifically, you neee to download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), 
+and then put it under ```MVGen/weights/pano/last/```.
+
+To train the pano-generation model, please download data from [matterport3D](https://niessner.github.io/Matterport/) skybox data and [labels](https://www.dropbox.com/scl/fi/recc3utsvmkbgc2vjqxur/mp3d_skybox.tar?rlkey=ywlz7zvyu25ovccacmc3iifwe&dl=0).
+
+To use your own data, please also follow the organization as follows: 
+```
+├── SGDreamer
+    ├── MVRec
+      ├── data
+          ├── mp3d_skybox
+            ├── train.npy
+            ├── test.npy
+            ├── 5q7pvUzZiYa
+              ├──blip3
+              ├──matterport_skybox_images
+            ├── 1LXtFkjw3qL
+            ├── ....
+```
+
 
 Now the project structure is shown as be below:
  ```
