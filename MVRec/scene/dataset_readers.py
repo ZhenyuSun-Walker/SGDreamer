@@ -438,7 +438,7 @@ def readColmapSceneInfo(path, images, eval, llffhold=8):
     test_idxs=list(range(len(cam_infos)))[1:-1:10] if eval else []
     print(test_idxs)
     if eval:
-        train_cam_infos = cam_infos#[c for idx, c in enumerate(cam_infos) if idx not in test_idxs]
+        train_cam_infos = cam_infos #[c for idx, c in enumerate(cam_infos) if idx not in test_idxs]
         test_cam_infos = [c for idx, c in enumerate(cam_infos) if idx in test_idxs]
     else:
         train_cam_infos = cam_infos

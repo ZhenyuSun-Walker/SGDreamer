@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the base directory containing the scenes
-SCENE_DIR="data/GPT_dataset_1024_old/outdoor"
+SCENE_DIR="data/GPT_dataset_1026/outdoor"
 
 # Iterate over each subdirectory (scene) in the SCENE_DIR
 for scene in "$SCENE_DIR"/*; do
@@ -10,7 +10,7 @@ for scene in "$SCENE_DIR"/*; do
         scene_name=$(basename "$scene")
         
         # Run the train.py script with the scene
-        CUDA_VISIBLE_DEVICES=7 python train.py -s "$SCENE_DIR/$scene_name/colmap/$scene_name" --name "$scene_name" -o 
+        CUDA_VISIBLE_DEVICES=0 python train.py -s "$SCENE_DIR/$scene_name/colmap/$scene_name" --name "$scene_name" 
     fi
 done
 

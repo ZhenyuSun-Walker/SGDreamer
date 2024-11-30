@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument('--deg', type=int, default=45, help='degree')
     parser.add_argument('--gen_video', action='store_true', help='generate video')
     parser.add_argument('--save_frames', action='store_true')
-    parser.add_argument('--prompt_folder', type=str, default='../prompt/indoor', help='path to prompt folder')
+    parser.add_argument('--prompt_folder', type=str, default='../example_prompt/indoor', help='path to prompt folder')
  
     return parser.parse_args()
 

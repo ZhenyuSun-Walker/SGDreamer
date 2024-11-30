@@ -4,10 +4,11 @@ total_psnr=0
 total_lpips=0
 total_ssim=0
 scene_count=0
-category="ablation/wo_rm_cam_opt/outdoor_wo_rm_cam_opt"
+category="ablation/wo_densi/all"
+dataset="GPT_dataset_final"
 
 # Loop through each scene directory in the indoor folder
-for scene_dir in metrics/GPT_dataset/$category/*; do
+for scene_dir in metrics/$dataset/$category/*; do
     if [ -d "$scene_dir" ]; then
         # Read the metrics.json file
         metric_file="$scene_dir/metrics.json"
@@ -42,7 +43,7 @@ else
 fi
 
 # Create the mean_metric.json file and write the average values
-mean_metric_file="metrics/GPT_dataset/$category/mean_metric.json"
+mean_metric_file="metrics/$dataset/$category/mean_metric.json"
 printf '{"psnr": %.6f, "lpips": %.6f, "ssim": %.6f}\n' "$avg_psnr" "$avg_lpips" "$avg_ssim" > "$mean_metric_file"
 
 echo "Average metrics calculated and stored in $mean_metric_file"

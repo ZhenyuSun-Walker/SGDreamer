@@ -1,6 +1,15 @@
 import os
 import shutil
 from datetime import datetime
+import argparse
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+    parser.add_argument('--source', type=str, help='Path to the output directory')
+    parser.add_argument('--target', type=str, default='../generate_mvimages', help='Path to the target generate_mvimages folder')
+ 
+    return parser.parse_args()
 
 def filter_images_by_number(folder_path, target_numbers, output_folder):
     """
@@ -39,7 +48,6 @@ def process_all_scenes(source_dir, target_numbers, mv_images_dir):
                 filter_images_by_number(scene_path, target_numbers, scene_output_folder)
 
 # Example usage:
-target_image_numbers = [i for i in range(0, 359, 18)]  # Assuming 720 images, filtering every 36th image
-source_dir = './outputs/results--20241101-000523'  # Path to the source path directory
-mv_images_dir = '../generate_mvimages'  # Path to the generate_mvimages folder
-process_all_scenes(source_dir, target_image_numbers, mv_images_dir)
+args = parse_args()
+target_image_numbers = [i for i in range(0, 359, 18)]  # filtering every 18th image
+process_all_scenes(args.source, target_image_numbers, args.target)
