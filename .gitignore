@@ -6,15 +6,23 @@
 **/__pycache__/
 **/*.egg-info
 *.pyc
-<<<<<<< HEAD
-MVSrec/dataset
-MVSrec/output
-MVSrec/result
-MVSrec/mvsgs_pointcloud
-MVSrec/mvsgs_pointcloud_opt
+generate_mvimages
+panorama
 
-MVgen/outputs
-MVgen/weights
-Mvgen/stabilityai
+<<<<<<< HEAD
+
+MVGen/outputs
+MVGen/weights
+MVGen/stabilityai
+MVGen/data
+
+MVRec/wandb
+MVRec/Optical-Flow-Visulization-PyTorch
+
+flowmap/checkpoints
+flowmap/outputs
+flowmap/Optical-Flow-Visulization-PyTorch
 =======
 >>>>>>> 5fc301413eb7e34df49c0831090e098e8da0280c
+MVRec_old
+prompt
