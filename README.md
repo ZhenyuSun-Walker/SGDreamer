@@ -48,8 +48,8 @@ python select_range.py --source ./outputs/$results --target ../generate_mvimages
 - `--deg` : Specify the rotation angle around the vertical axis, 45 in degrees as default.
 - `--prompt_folder` : Path to the text file containing the prompts including different scenes.  
 
-Specifically, you neee to download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), and then put it under 
-```MVGen/weights/pano/last/```.
+Specifically, you neee to download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), 
+and then put it under ```MVGen/weights/pano/last/```.
 
 To train the pano-generation model, please download data from [matterport3D](https://niessner.github.io/Matterport/) skybox data and [labels](https://www.dropbox.com/scl/fi/recc3utsvmkbgc2vjqxur/mp3d_skybox.tar?rlkey=ywlz7zvyu25ovccacmc3iifwe&dl=0).
 
