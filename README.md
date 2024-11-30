@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="800" src="./assets/teaser.pdf".
+    <img width="800" src="./assets/teaser.png".
 </p>
 
 # SGDreamer: Scene Harmonic Gaussian-based Dreamer for Domain-Free Text-to-3D Generation with Peripheral 360-Degree Views
