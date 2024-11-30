@@ -44,13 +44,13 @@ python generate.py --gen_video --save_frames [Other options]
 python select_range.py --source ./outputs/$results --target ../generate_mvimages
 ```
 
-Specifically, you can download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), and then put it under 
-```MVGen/weights/pano/last/```.
-
 #### Other Options
 - `--fov` : Denote the horizontal field of camera view, 90 in degrees as default.
 - `--deg` : Specify the rotation angle around the vertical axis, 45 in degrees as default.
 - `--prompt_folder` : Path to the text file containing the prompts including different scenes.  
+
+Specifically, you neee to download the weight file from [here](https://pan.baidu.com/s/18M39ZzGIuyNTFZYJ7BfItQ?pwd=3Z8X), and then put it under 
+```MVGen/weights/pano/last/```.
 
 Now the project structure is shown as be below:
  ```
@@ -61,6 +61,7 @@ Now the project structure is shown as be below:
         ├── select_range.py
         ├── outputs   
             ├── <results_1>
+        ├── weights
     ├── generate_mvimages
         ├── <results_1>
             ├── <scene_1>
